@@ -36,7 +36,7 @@ cp -R providers/_template providers/<provider-slug>
 
 ## 内容要求
 
-只收集免费 LLM 接入所需信息，不收录无关介绍、营销话术、体验感受或教程废话。
+只收集免费 LLM 接入所需信息，不收录无关介绍、营销内容或体验描述。
 
 ## 不要提交真实密钥
 

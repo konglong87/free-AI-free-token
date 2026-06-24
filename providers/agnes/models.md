@@ -5,9 +5,9 @@
 | 模型名 | 类型 | 接口 | 备注 |
 | --- | --- | --- | --- |
 | `agnes-2.0-flash` | 对话 / 文本生成 / 推理 | `/v1/chat/completions` | 官网文档显示为 Agnes 2.0 Flash |
-| `agnes-image-2.0-flash` | 文生图 / 图像编辑 | 待核验 | 用户提供截图显示为免费模型 |
+| `agnes-image-2.0-flash` | 文生图 / 图像编辑 | 待核验 | Agnes AI 官网截图显示为免费模型 |
 | `agnes-image-2.1-flash` | 文生图 / 图像编辑 | 待核验 | 官网文档显示为 Agnes Image 2.1 Flash |
-| `agnes-video-v2.0` | 视频生成 | 待核验 | 用户提供截图显示为免费模型 |
+| `agnes-video-v2.0` | 视频生成 | 待核验 | Agnes AI 官网截图显示为免费模型 |
 
 ## 能力范围
 

@@ -19,10 +19,10 @@
 
 ## 图片来源
 
-- `assets/agnes-doc-overview.png`：用户提供的 Agnes AI API 在线文档截图。
-- `assets/agnes-free-openai-compatible.png`：用户提供的 Agnes AI API 免费能力与 OpenAI 风格接口截图。
-- `assets/agnes-free-models.png`：用户提供的 Agnes AI 免费模型截图。
-- `assets/agnes-agent-integrations.png`：用户提供的 Agnes AI 常见接入文档截图。
+- `assets/agnes-doc-overview.png`：Agnes AI API 在线文档截图。
+- `assets/agnes-free-openai-compatible.png`：Agnes AI API 免费能力与 OpenAI 风格接口截图。
+- `assets/agnes-free-models.png`：Agnes AI 免费模型截图。
+- `assets/agnes-agent-integrations.png`：Agnes AI 常见接入文档截图。
 
 ## 来源核验记录
 
