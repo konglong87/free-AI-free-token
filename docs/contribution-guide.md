@@ -33,10 +33,30 @@ cp -R providers/_template providers/<provider-slug>
 - 是否 OpenAI compatible
 - base URL
 - model name
+- agent / coding client 接入方式
+- 核验状态
 
 ## 内容要求
 
 只收集免费 LLM 接入所需信息，不收录无关介绍、营销内容或体验描述。
+
+允许写入的信息：
+
+- 官网和官方文档入口
+- API key 获取入口
+- 接入地址
+- 免费模型
+- OpenAI-compatible 状态
+- Claude Code、OpenClaw、OpenCode、Codex、Hermes 接入方式
+- 核验日期和核验状态
+
+禁止写入的信息：
+
+- 真实 API key、token、cookie、session
+- 个人账号、手机号、邮箱、用户 ID
+- 作者或转载平台的无关信息
+- 截图中的敏感字段
+- 无法追溯来源的结论
 
 ## 不要提交真实密钥
 

@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+*.swp
+*.swo
+*.tmp
+*.log
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example

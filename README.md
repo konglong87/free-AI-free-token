@@ -17,6 +17,7 @@
 ```text
 free-AI-free-token/
 ├── README.md
+├── .gitignore
 ├── docs/
 │   ├── architecture.md
 │   └── contribution-guide.md
@@ -47,6 +48,20 @@ providers/google-ai-studio/
 ```
 
 每个供应商目录必须从 `providers/_template/` 复制，不允许临时自由发挥。这样后续用户接入任何一家免费 LLM 时，都能在同样的位置找到同样类型的信息。
+
+## 采集边界
+
+只收集公开、可追溯、可接入的信息：
+
+- 官网和官方文档入口
+- API key 获取入口
+- 接入地址
+- 免费模型
+- OpenAI-compatible 状态
+- Claude Code、OpenClaw、OpenCode、Codex、Hermes 接入方式
+- 核验日期和核验状态
+
+不收录营销介绍、使用感受、作者信息、账号信息、截图中的敏感字段或任何非公开内容。
 
 ## 固定文档模板
 
@@ -88,6 +103,7 @@ providers/google-ai-studio/
 
 - 官方来源链接
 - 核验日期
+- 核验状态
 - API endpoint
 - model
 
