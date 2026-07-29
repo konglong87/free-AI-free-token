@@ -22,6 +22,7 @@
 - `assets/agnes-doc-overview.png`：Agnes AI API 在线文档截图。
 - `assets/agnes-free-openai-compatible.png`：Agnes AI API 免费能力与 OpenAI 风格接口截图。
 - `assets/agnes-free-models.png`：Agnes AI 免费模型截图。
+- `assets/agnes-2.5-flash-zero-cost.png`：`agnes-2.5-flash` 两条调用记录的消费金额均为 0 美分，截图时间为 2026-07-29。
 - `assets/agnes-agent-integrations.png`：Agnes AI 常见接入文档截图。
 
 ## 来源核验记录
@@ -31,3 +32,4 @@
 | 2026-06-24 | Agnes AI 官网文档 | 平台定位、免费 AI API、OpenAI 风格接口 | 已核对 |
 | 2026-06-24 | Agnes AI 模型文档与截图 | `agnes-2.0-flash`、`agnes-image-2.0-flash`、`agnes-image-2.1-flash`、`agnes-video-v2.0` | 已核对 |
 | 2026-06-24 | Agnes AI 常见接入文档截图 | OpenClaw、HermesAgents、Claude CLI、Claude Desktop、WorkBuddy、Cherry Studio、OpenCode、Codex++ | 已核对 |
+| 2026-07-29 | Agnes AI 调用消费记录截图 | `agnes-2.5-flash` 两条调用记录消费金额均为 0 美分 | 已实测 |
