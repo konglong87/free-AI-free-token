@@ -6,25 +6,17 @@
 
 ## 免费供应商
 
-<table>
-<colgroup>
-<col width="8%">
-<col width="8%">
-<col width="30%">
-<col width="8%">
-<col width="36%">
-<col width="10%">
-</colgroup>
+<table width="100%">
 <thead>
-<tr><th>供应商</th><th>目录</th><th>免费模型</th><th>接入地址</th><th>证据</th><th>状态</th></tr>
+<tr><th width="8%">供应商</th><th width="8%">目录</th><th width="30%">免费模型</th><th width="8%">接入地址</th><th width="36%">证据</th><th width="10%">状态</th></tr>
 </thead>
 <tbody>
-<tr><td>Agnes AI</td><td><a href="providers/agnes/">providers/agnes</a></td><td><code>agnes-2.0-flash</code>、<code>agnes-2.5-flash</code>、<code>agnes-image-2.0-flash</code>、<code>agnes-image-2.1-flash</code>、<code>agnes-video-v2.0</code></td><td><code>https://apihub.agnes-ai.com/v1</code></td><td>-</td><td>已整理，全部实测</td></tr>
-<tr><td>智谱 GLM</td><td><a href="providers/zhipu-glm/">providers/zhipu-glm</a></td><td><code>glm-4.7-flash</code>、<code>glm-4-flash-250414</code>、<code>glm-4.6v-flash</code>、<code>glm-4.1v-thinking-flash</code>、<code>glm-4v-flash</code>、<code>cogview-3-flash</code>、<code>cogvideox-flash</code></td><td><code>https://open.bigmodel.cn/api/paas/v4/</code></td><td>-</td><td>已整理，待实测</td></tr>
-<tr><td>商汤 SenseNova</td><td><a href="providers/sensenova/">providers/sensenova</a></td><td><code>sensenova-6.7-flash-lite</code>、SenseNova U1 Fast</td><td><code>https://token.sensenova.cn/v1</code></td><td>-</td><td>已整理，待实测</td></tr>
-<tr><td>OpenRouter</td><td><a href="providers/openrouter/">providers/openrouter</a></td><td><code>*:free</code> 模型</td><td><code>https://openrouter.ai/api/v1</code></td><td>-</td><td>已整理，待实测</td></tr>
-<tr><td>B.AI</td><td><a href="providers/b-ai/">providers/b-ai</a></td><td><code>DeepSeek-V4-Flash</code>、<code>DeepSeek-V4-Flash-Vision-Exp</code>、<code>Hy3</code></td><td><code>https://api.b.ai/v1</code></td><td><a href="providers/b-ai/assets/b-ai-free-models.png"><img src="providers/b-ai/assets/b-ai-free-models.png" width="480" alt="B.AI 免费模型截图"></a><br><a href="providers/b-ai/assets/b-ai-api-example.png"><img src="providers/b-ai/assets/b-ai-api-example.png" width="480" alt="B.AI API 调用示例"></a></td><td>已整理，免费标记已截图，待实测</td></tr>
-<tr><td>模板</td><td><a href="providers/_template/">providers/_template</a></td><td>待填写</td><td>待填写</td><td>-</td><td>模板</td></tr>
+<tr><td width="8%">Agnes AI</td><td width="8%"><a href="providers/agnes/">providers/agnes</a></td><td width="30%"><code>agnes-2.0-flash</code>、<code>agnes-2.5-flash</code>、<code>agnes-image-2.0-flash</code>、<code>agnes-image-2.1-flash</code>、<code>agnes-video-v2.0</code></td><td width="8%"><code>https://apihub.agnes-ai.com/v1</code></td><td width="36%">-</td><td width="10%">已整理，全部实测</td></tr>
+<tr><td width="8%">智谱 GLM</td><td width="8%"><a href="providers/zhipu-glm/">providers/zhipu-glm</a></td><td width="30%"><code>glm-4.7-flash</code>、<code>glm-4-flash-250414</code>、<code>glm-4.6v-flash</code>、<code>glm-4.1v-thinking-flash</code>、<code>glm-4v-flash</code>、<code>cogview-3-flash</code>、<code>cogvideox-flash</code></td><td width="8%"><code>https://open.bigmodel.cn/api/paas/v4/</code></td><td width="36%">-</td><td width="10%">已整理，待实测</td></tr>
+<tr><td width="8%">商汤 SenseNova</td><td width="8%"><a href="providers/sensenova/">providers/sensenova</a></td><td width="30%"><code>sensenova-6.7-flash-lite</code>、SenseNova U1 Fast</td><td width="8%"><code>https://token.sensenova.cn/v1</code></td><td width="36%">-</td><td width="10%">已整理，待实测</td></tr>
+<tr><td width="8%">OpenRouter</td><td width="8%"><a href="providers/openrouter/">providers/openrouter</a></td><td width="30%"><code>*:free</code> 模型</td><td width="8%"><code>https://openrouter.ai/api/v1</code></td><td width="36%">-</td><td width="10%">已整理，待实测</td></tr>
+<tr><td width="8%">B.AI</td><td width="8%"><a href="providers/b-ai/">providers/b-ai</a></td><td width="30%"><code>DeepSeek-V4-Flash</code>、<code>DeepSeek-V4-Flash-Vision-Exp</code>、<code>Hy3</code></td><td width="8%"><code>https://api.b.ai/v1</code></td><td width="36%"><a href="providers/b-ai/assets/b-ai-free-models.png"><img src="providers/b-ai/assets/b-ai-free-models.png" width="480" alt="B.AI 免费模型截图"></a><br><a href="providers/b-ai/assets/b-ai-api-example.png"><img src="providers/b-ai/assets/b-ai-api-example.png" width="480" alt="B.AI API 调用示例"></a></td><td width="10%">已整理，免费标记已截图，待实测</td></tr>
+<tr><td width="8%">模板</td><td width="8%"><a href="providers/_template/">providers/_template</a></td><td width="30%">待填写</td><td width="8%">待填写</td><td width="36%">-</td><td width="10%">模板</td></tr>
 </tbody>
 </table>
 
