@@ -12,6 +12,7 @@
 | 智谱 GLM | [providers/zhipu-glm](providers/zhipu-glm/) | `glm-4.7-flash`、`glm-4-flash-250414`、`glm-4.6v-flash`、`glm-4.1v-thinking-flash`、`glm-4v-flash`、`cogview-3-flash`、`cogvideox-flash` | `https://open.bigmodel.cn/api/paas/v4/` | 已整理，待实测 |
 | 商汤 SenseNova | [providers/sensenova](providers/sensenova/) | `sensenova-6.7-flash-lite`、SenseNova U1 Fast | `https://token.sensenova.cn/v1` | 已整理，待实测 |
 | OpenRouter | [providers/openrouter](providers/openrouter/) | `*:free` 模型 | `https://openrouter.ai/api/v1` | 已整理，待实测 |
+| B.AI | [providers/b-ai](providers/b-ai/) | `DeepSeek-V4-Flash`、`DeepSeek-V4-Flash-Vision-Exp`、`Hy3` | `https://api.b.ai/v1` | 已整理，免费标记已截图，待实测 |
 | 模板 | [providers/_template](providers/_template/) | 待填写 | 待填写 | 模板 |
 
 ## 仓库架构
