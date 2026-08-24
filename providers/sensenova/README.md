@@ -31,6 +31,12 @@
 - 推荐免费模型：`sensenova-6.7-flash-lite`
 - 核验状态：已整理，待实测
 
+## 图片证据
+
+![SenseNova 模型文档与请求示例](assets/sensenova-model-docs.png)
+
+![SenseNova 公测免费套餐](assets/sensenova-free-plan.png)
+
 ## 目录
 
 - [官方链接](official-links.md)

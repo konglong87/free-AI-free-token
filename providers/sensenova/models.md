@@ -16,6 +16,8 @@
 
 - Token Plan：https://www.sensenova.cn/token-plan
 - API 文档：https://github.com/OpenSenseNova/SenseNova6.7/blob/main/API_CN.md
+- 模型文档截图：`assets/sensenova-model-docs.png`
+- 公测免费套餐截图：`assets/sensenova-free-plan.png`
 - 最后核验日期：2026-07-18
 
 ## 说明
