@@ -6,14 +6,27 @@
 
 ## 免费供应商
 
-| 供应商 | 目录 | 免费模型 | 接入地址 | 证据 | 状态 |
-| --- | --- | --- | --- | --- | --- |
-| Agnes AI | [providers/agnes](providers/agnes/) | `agnes-2.0-flash`、`agnes-2.5-flash`、`agnes-image-2.0-flash`、`agnes-image-2.1-flash`、`agnes-video-v2.0` | `https://apihub.agnes-ai.com/v1` | - | 已整理，全部实测 |
-| 智谱 GLM | [providers/zhipu-glm](providers/zhipu-glm/) | `glm-4.7-flash`、`glm-4-flash-250414`、`glm-4.6v-flash`、`glm-4.1v-thinking-flash`、`glm-4v-flash`、`cogview-3-flash`、`cogvideox-flash` | `https://open.bigmodel.cn/api/paas/v4/` | - | 已整理，待实测 |
-| 商汤 SenseNova | [providers/sensenova](providers/sensenova/) | `sensenova-6.7-flash-lite`、SenseNova U1 Fast | `https://token.sensenova.cn/v1` | - | 已整理，待实测 |
-| OpenRouter | [providers/openrouter](providers/openrouter/) | `*:free` 模型 | `https://openrouter.ai/api/v1` | - | 已整理，待实测 |
-| B.AI | [providers/b-ai](providers/b-ai/) | `DeepSeek-V4-Flash`、`DeepSeek-V4-Flash-Vision-Exp`、`Hy3` | `https://api.b.ai/v1` | <a href="providers/b-ai/assets/b-ai-free-models.png"><img src="providers/b-ai/assets/b-ai-free-models.png" width="480" alt="B.AI 免费模型截图"></a><br><a href="providers/b-ai/assets/b-ai-api-example.png"><img src="providers/b-ai/assets/b-ai-api-example.png" width="480" alt="B.AI API 调用示例"></a> | 已整理，免费标记已截图，待实测 |
-| 模板 | [providers/_template](providers/_template/) | 待填写 | 待填写 | - | 模板 |
+<table>
+<colgroup>
+<col width="8%">
+<col width="8%">
+<col width="30%">
+<col width="8%">
+<col width="36%">
+<col width="10%">
+</colgroup>
+<thead>
+<tr><th>供应商</th><th>目录</th><th>免费模型</th><th>接入地址</th><th>证据</th><th>状态</th></tr>
+</thead>
+<tbody>
+<tr><td>Agnes AI</td><td><a href="providers/agnes/">providers/agnes</a></td><td><code>agnes-2.0-flash</code>、<code>agnes-2.5-flash</code>、<code>agnes-image-2.0-flash</code>、<code>agnes-image-2.1-flash</code>、<code>agnes-video-v2.0</code></td><td><code>https://apihub.agnes-ai.com/v1</code></td><td>-</td><td>已整理，全部实测</td></tr>
+<tr><td>智谱 GLM</td><td><a href="providers/zhipu-glm/">providers/zhipu-glm</a></td><td><code>glm-4.7-flash</code>、<code>glm-4-flash-250414</code>、<code>glm-4.6v-flash</code>、<code>glm-4.1v-thinking-flash</code>、<code>glm-4v-flash</code>、<code>cogview-3-flash</code>、<code>cogvideox-flash</code></td><td><code>https://open.bigmodel.cn/api/paas/v4/</code></td><td>-</td><td>已整理，待实测</td></tr>
+<tr><td>商汤 SenseNova</td><td><a href="providers/sensenova/">providers/sensenova</a></td><td><code>sensenova-6.7-flash-lite</code>、SenseNova U1 Fast</td><td><code>https://token.sensenova.cn/v1</code></td><td>-</td><td>已整理，待实测</td></tr>
+<tr><td>OpenRouter</td><td><a href="providers/openrouter/">providers/openrouter</a></td><td><code>*:free</code> 模型</td><td><code>https://openrouter.ai/api/v1</code></td><td>-</td><td>已整理，待实测</td></tr>
+<tr><td>B.AI</td><td><a href="providers/b-ai/">providers/b-ai</a></td><td><code>DeepSeek-V4-Flash</code>、<code>DeepSeek-V4-Flash-Vision-Exp</code>、<code>Hy3</code></td><td><code>https://api.b.ai/v1</code></td><td><a href="providers/b-ai/assets/b-ai-free-models.png"><img src="providers/b-ai/assets/b-ai-free-models.png" width="480" alt="B.AI 免费模型截图"></a><br><a href="providers/b-ai/assets/b-ai-api-example.png"><img src="providers/b-ai/assets/b-ai-api-example.png" width="480" alt="B.AI API 调用示例"></a></td><td>已整理，免费标记已截图，待实测</td></tr>
+<tr><td>模板</td><td><a href="providers/_template/">providers/_template</a></td><td>待填写</td><td>待填写</td><td>-</td><td>模板</td></tr>
+</tbody>
+</table>
 
 ## 仓库架构
 
