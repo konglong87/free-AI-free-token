@@ -6,7 +6,7 @@
 - API 状态：官方文档已核对
 - 免费模型状态：官网 Token Plan 已核对
 - 接入文档状态：OpenAI-compatible 接入已整理，agent 专用配置待实测
-- 最后核验日期：2026-07-18
+- 最后核验日期：2026-08-24
 
 ## 一句话说明
 
@@ -28,6 +28,7 @@
 - 接入地址：https://token.sensenova.cn/v1
 - Chat completions endpoint：`https://token.sensenova.cn/v1/chat/completions`
 - 是否 OpenAI-compatible：是
+- 免费模型：`sensenova-6.7-flash-lite`、SenseNova U1 Fast、`glm-5.2`、DeepSeek V4 Flash
 - 推荐免费模型：`sensenova-6.7-flash-lite`
 - 核验状态：已整理，待实测
 
