@@ -10,7 +10,7 @@
 - 每个目录包含模板规定的 9 个文件：总览、官方链接、模型列表、API 接入，以及 Claude Code、OpenClaw、OpenCode、Codex、Hermes 五类 integrations 文档。
 - 每家收录 3–5 个代表性免费模型；AI21 Labs 当前公开参考清单仅确认 2 个模型，因此只收录这 2 个并在文档中说明数量限制。
 - 根 README 增加四家供应商索引行，包含目录、代表模型和 Base URL。
-- 参考资料使用已下载的 `awesome-freellm-apis` 中文 README；关键链接同时指向供应商官方入口或官方文档。
+- 参考资料使用已下载的公开中文 README；关键链接同时指向供应商官方入口或官方文档。
 
 ## 模型清单
 

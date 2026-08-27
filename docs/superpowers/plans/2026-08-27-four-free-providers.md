@@ -120,15 +120,15 @@ Expected: no credential-like values; expected Base URLs are present.
 
 Run `git diff --stat` and inspect the changed provider files and `README.md`; confirm only approved documentation changes are present.
 
-- [ ] **Step 4: Stage implementation files and the approved design-doc deletion**
+- [ ] **Step 4: Stage implementation files and approved planning documents**
 
 Run:
 
 ```bash
 git add README.md providers/nvidia-nim providers/modelscope providers/groq providers/ai21-labs docs/superpowers/plans/2026-08-27-four-free-providers.md
-git add -u docs/superpowers/specs/2026-08-27-four-free-providers-design.md
+git add docs/superpowers/specs/2026-08-27-four-free-providers-design.md
 git commit -m "docs: add nvidia modelscope groq ai21 providers"
 git push
 ```
 
-Expected: commit succeeds and the current branch is pushed. The design path is deleted from Git history while its restored copy remains untracked in the local workspace.
+Expected: commit succeeds and the current branch is pushed with both planning documents and the four provider additions.
