@@ -4,6 +4,7 @@
 *.swo
 *.tmp
 *.log
+.superpowers/
 
 # Local secrets and environment files
 .env
