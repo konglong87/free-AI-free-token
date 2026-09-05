@@ -34,18 +34,18 @@
 
 <table width="100%">
 <thead>
-<tr><th width="18%">供应商</th><th width="14%">状态</th><th width="43%">推荐模型</th><th width="25%">Base URL</th></tr>
+<tr><th width="16%">供应商</th><th width="8%">目录</th><th width="29%">推荐模型</th><th width="17%">接入地址</th><th width="11%">快注册</th><th width="12%">证据</th><th width="7%">状态</th></tr>
 </thead>
 <tbody>
-<tr><td><a href="providers/agnes/">Agnes AI</a></td><td>✅</td><td><code>agnes-2.0-flash</code>、<code>agnes-2.5-flash</code></td><td><code>apihub.agnes-ai.com/v1</code></td></tr>
-<tr><td><a href="providers/zhipu-glm/">智谱 GLM</a></td><td>✅</td><td><code>glm-4.7-flash</code>、<code>glm-4.6v-flash</code></td><td><code>open.bigmodel.cn/api/paas/v4</code></td></tr>
-<tr><td><a href="providers/sensenova/">商汤 SenseNova</a></td><td>✅</td><td><code>sensenova-6.7-flash-lite</code>、<code>glm-5.2</code></td><td><code>token.sensenova.cn/v1</code></td></tr>
-<tr><td><a href="providers/openrouter/">OpenRouter</a></td><td>✅</td><td><code>*:free</code> 模型</td><td><code>openrouter.ai/api/v1</code></td></tr>
-<tr><td><a href="providers/b-ai/">B.AI</a></td><td>✅</td><td><code>DeepSeek-V4-Flash</code>、<code>Hy3</code></td><td><code>api.b.ai/v1</code></td></tr>
-<tr><td><a href="providers/nvidia-nim/">NVIDIA NIM</a></td><td>🟡</td><td><code>z-ai/glm-5.2</code>、<code>poolside/laguna-xs-2.1</code></td><td><code>integrate.api.nvidia.com/v1</code></td></tr>
-<tr><td><a href="providers/modelscope/">ModelScope</a></td><td>🟡</td><td><code>MiniMax/MiniMax-M2.5</code>、<code>qwen-qwen3-5-35b-a3b</code></td><td><code>api-inference.modelscope.cn/v1</code></td></tr>
-<tr><td><a href="providers/groq/">Groq</a></td><td>🟡</td><td><code>moonshotai/kimi-k2-instruct</code>、<code>groq/compound</code></td><td><code>api.groq.com/openai/v1</code></td></tr>
-<tr><td><a href="providers/ai21-labs/">AI21 Labs</a></td><td>🟡</td><td><code>jamba-large-1-7</code>、<code>jamba-mini-2</code></td><td><code>api.ai21.com/studio/v1</code></td></tr>
+<tr><td><a href="providers/agnes/">Agnes AI</a></td><td><a href="providers/agnes/">目录</a></td><td><code>agnes-2.0-flash</code>、<code>agnes-2.5-flash</code></td><td><code>apihub.agnes-ai.com/v1</code></td><td><a href="https://agnes-ai.com/">快注册</a></td><td><a href="providers/agnes/assets/agnes-free-models.png">模型截图</a></td><td>✅</td></tr>
+<tr><td><a href="providers/zhipu-glm/">智谱 GLM</a></td><td><a href="providers/zhipu-glm/">目录</a></td><td><code>glm-4.7-flash</code>、<code>glm-4.6v-flash</code></td><td><code>open.bigmodel.cn/api/paas/v4</code></td><td><a href="https://bigmodel.cn/">快注册</a></td><td>-</td><td>✅</td></tr>
+<tr><td><a href="providers/sensenova/">商汤 SenseNova</a></td><td><a href="providers/sensenova/">目录</a></td><td><code>sensenova-6.7-flash-lite</code>、<code>glm-5.2</code></td><td><code>token.sensenova.cn/v1</code></td><td><a href="https://www.sensenova.cn/">快注册</a></td><td><a href="providers/sensenova/assets/sensenova-model-docs.png">模型截图</a></td><td>✅</td></tr>
+<tr><td><a href="providers/openrouter/">OpenRouter</a></td><td><a href="providers/openrouter/">目录</a></td><td><code>*:free</code> 模型</td><td><code>openrouter.ai/api/v1</code></td><td><a href="https://openrouter.ai/">快注册</a></td><td>-</td><td>✅</td></tr>
+<tr><td><a href="providers/b-ai/">B.AI</a></td><td><a href="providers/b-ai/">目录</a></td><td><code>DeepSeek-V4-Flash</code>、<code>Hy3</code></td><td><code>api.b.ai/v1</code></td><td><a href="https://chat.b.ai/">快注册</a></td><td><a href="providers/b-ai/assets/b-ai-free-models.png">模型截图</a></td><td>✅</td></tr>
+<tr><td><a href="providers/nvidia-nim/">NVIDIA NIM</a></td><td><a href="providers/nvidia-nim/">目录</a></td><td><code>z-ai/glm-5.2</code>、<code>poolside/laguna-xs-2.1</code></td><td><code>integrate.api.nvidia.com/v1</code></td><td><a href="https://build.nvidia.com/">快注册</a></td><td>-</td><td>🟡</td></tr>
+<tr><td><a href="providers/modelscope/">ModelScope</a></td><td><a href="providers/modelscope/">目录</a></td><td><code>MiniMax/MiniMax-M2.5</code>、<code>qwen-qwen3-5-35b-a3b</code></td><td><code>api-inference.modelscope.cn/v1</code></td><td><a href="https://modelscope.cn/">快注册</a></td><td>-</td><td>🟡</td></tr>
+<tr><td><a href="providers/groq/">Groq</a></td><td><a href="providers/groq/">目录</a></td><td><code>moonshotai/kimi-k2-instruct</code>、<code>groq/compound</code></td><td><code>api.groq.com/openai/v1</code></td><td><a href="https://console.groq.com/">快注册</a></td><td>-</td><td>🟡</td></tr>
+<tr><td><a href="providers/ai21-labs/">AI21 Labs</a></td><td><a href="providers/ai21-labs/">目录</a></td><td><code>jamba-large-1-7</code>、<code>jamba-mini-2</code></td><td><code>api.ai21.com/studio/v1</code></td><td><a href="https://studio.ai21.com/">快注册</a></td><td>-</td><td>🟡</td></tr>
 </tbody>
 </table>
 
