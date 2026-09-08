@@ -9,7 +9,7 @@
 ```bash
 export PROVIDER_API_KEY="你的 Agnes AI API key"
 export PROVIDER_BASE_URL="https://apihub.agnes-ai.com/v1"
-export PROVIDER_MODEL="agnes-2.0-flash"
+export PROVIDER_MODEL="agnes-3.0-flash"
 ```
 
 ## 接入步骤
@@ -18,7 +18,7 @@ export PROVIDER_MODEL="agnes-2.0-flash"
 2. 选择 OpenCode 接入方法。
 3. 填写 Agnes AI API key。
 4. 填写 Base URL `https://apihub.agnes-ai.com/v1`。
-5. 填写模型名 `agnes-2.0-flash`。
+5. 填写模型名 `agnes-3.0-flash`。
 6. 运行最小 prompt。
 
 ## 待核验

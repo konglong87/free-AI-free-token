@@ -9,7 +9,7 @@
 ```bash
 export PROVIDER_API_KEY="你的 Agnes AI API key"
 export PROVIDER_BASE_URL="https://apihub.agnes-ai.com/v1"
-export PROVIDER_MODEL="agnes-2.0-flash"
+export PROVIDER_MODEL="agnes-3.0-flash"
 ```
 
 ## 接入步骤

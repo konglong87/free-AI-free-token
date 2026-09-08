@@ -6,6 +6,7 @@
 - API 文档：https://agnes-ai.com/doc
 - 常见接入文档：https://agnes-ai.com/doc/cid1
 - Quick Start：https://agnes-ai.com/doc/quick-start
+- Agnes 3.0 Flash：https://www.agnes-ai.com/en/docs/agnes-30-flash
 - Agnes 2.0 Flash：https://agnes-ai.com/doc/agnes-20-flash
 - Agnes Image 2.1 Flash：https://agnes-ai.com/doc/agnes-image-21-flash
 - OpenClaw：https://agnes-ai.com/doc/cid2
@@ -33,3 +34,4 @@
 | 2026-06-24 | Agnes AI 模型文档与截图 | `agnes-2.0-flash`、`agnes-image-2.0-flash`、`agnes-image-2.1-flash`、`agnes-video-v2.0` | 已核对 |
 | 2026-06-24 | Agnes AI 常见接入文档截图 | OpenClaw、HermesAgents、Claude CLI、Claude Desktop、WorkBuddy、Cherry Studio、OpenCode、Codex++ | 已核对 |
 | 2026-07-29 | Agnes AI 调用消费记录截图 | `agnes-2.5-flash` 两条调用记录消费金额均为 0 美分 | 已实测 |
+| 2026-09-08 | Agnes 3.0 Flash 官方文档 | 模型 ID、接口、输入类型、上下文、最大输出与当前 $0 定价 | 已核对，待 API 实测 |

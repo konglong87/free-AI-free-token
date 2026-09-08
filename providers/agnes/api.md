@@ -12,7 +12,7 @@
 ```bash
 export PROVIDER_API_KEY="你的 Agnes AI API key"
 export PROVIDER_BASE_URL="https://apihub.agnes-ai.com/v1"
-export PROVIDER_MODEL="agnes-2.0-flash"
+export PROVIDER_MODEL="agnes-3.0-flash"
 ```
 
 ## 接入步骤
@@ -21,7 +21,7 @@ export PROVIDER_MODEL="agnes-2.0-flash"
 2. 注册或登录 Agnes AI。
 3. 创建 API key。
 4. 配置 Base URL 为 `https://apihub.agnes-ai.com/v1`。
-5. 配置模型为 `agnes-2.0-flash`。
+5. 配置模型为 `agnes-3.0-flash`。
 6. 发送最小对话请求验证。
 
 ## 常见错误

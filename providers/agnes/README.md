@@ -2,16 +2,18 @@
 
 ## 当前状态
 
-- 文档状态：已整理，全部实测
-- API 状态：全部实测
-- 免费模型状态：全部实测；`agnes-2.5-flash` 的调用消费金额已核对为 0 美分
-- 最后核验日期：2026-07-29
+- 文档状态：已更新至 Agnes 3.0 Flash
+- API 状态：3.0 官方文档已核对，待实测
+- 免费模型状态：`agnes-3.0-flash` 官方价格当前为 $0；`agnes-2.5-flash` 已实测零消费
+- 最后核验日期：2026-09-08
 
 ![Agnes AI API 在线文档](assets/agnes-doc-overview.png)
 
 ## 一句话说明
 
 Agnes AI 是 Sapiens AI 提供的免费 AI API 平台，支持 OpenAI 风格接口，面向对话、文本生成、图像、视频、音视频同步、Agent 工具等场景。
+
+当前优先推荐 `agnes-3.0-flash`：官方文档确认其面向 Agent 编码与工具驱动任务，支持 512K 上下文、文本和图片 URL 输入，以及 Chat Completions、Responses、Messages 三类 API。
 
 ![Agnes AI API 免费能力与 OpenAI 风格接口](assets/agnes-free-openai-compatible.png)
 
@@ -39,7 +41,8 @@ Agnes AI 是 Sapiens AI 提供的免费 AI API 平台，支持 OpenAI 风格接�
 - 接入地址：https://apihub.agnes-ai.com/v1
 - Chat completions endpoint：`https://apihub.agnes-ai.com/v1/chat/completions`
 - 是否 OpenAI-compatible：是
-- 免费模型：`agnes-2.0-flash`、`agnes-2.5-flash`、`agnes-image-2.0-flash`、`agnes-image-2.1-flash`、`agnes-video-v2.0`
+- 推荐免费模型：`agnes-3.0-flash`
+- 免费模型：`agnes-3.0-flash`、`agnes-2.5-flash`、`agnes-2.0-flash`、`agnes-image-2.0-flash`、`agnes-image-2.1-flash`、`agnes-video-v2.0`
 
 ## 目录
 

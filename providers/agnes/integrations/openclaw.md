@@ -9,7 +9,7 @@
 ```bash
 export PROVIDER_API_KEY="你的 Agnes AI API key"
 export PROVIDER_BASE_URL="https://apihub.agnes-ai.com/v1"
-export PROVIDER_MODEL="agnes-2.0-flash"
+export PROVIDER_MODEL="agnes-3.0-flash"
 ```
 
 ## 接入步骤
@@ -19,7 +19,7 @@ export PROVIDER_MODEL="agnes-2.0-flash"
 3. 在 OpenClaw 中选择 OpenAI-compatible provider。
 4. 填写 Agnes AI API key。
 5. 填写 Base URL `https://apihub.agnes-ai.com/v1`。
-6. 填写模型名 `agnes-2.0-flash`。
+6. 填写模型名 `agnes-3.0-flash`。
 7. 运行最小对话请求。
 
 ## 待核验

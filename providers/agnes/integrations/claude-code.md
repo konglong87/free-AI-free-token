@@ -9,7 +9,7 @@
 ```bash
 export PROVIDER_API_KEY="你的 Agnes AI API key"
 export PROVIDER_BASE_URL="https://apihub.agnes-ai.com/v1"
-export PROVIDER_MODEL="agnes-2.0-flash"
+export PROVIDER_MODEL="agnes-3.0-flash"
 ```
 
 ## 接入步骤
@@ -18,7 +18,7 @@ export PROVIDER_MODEL="agnes-2.0-flash"
 2. 参考 Claude CLI 或 Claude Desktop 接入方法。
 3. 确认 Claude Code 是否支持 OpenAI-compatible provider。
 4. 设置 Base URL 为 `https://apihub.agnes-ai.com/v1`。
-5. 设置模型为 `agnes-2.0-flash`。
+5. 设置模型为 `agnes-3.0-flash`。
 6. 发起一次最小 prompt。
 
 ## 待核验
