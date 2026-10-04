@@ -9,7 +9,7 @@ SenseNova 官方 API 文档提供 OpenAI-compatible 接入；OpenCode 专用配�
 ```bash
 export PROVIDER_API_KEY="你的 SenseNova API key"
 export PROVIDER_BASE_URL="https://token.sensenova.cn/v1"
-export PROVIDER_MODEL="sensenova-6.7-flash-lite"
+export PROVIDER_MODEL="deepseek-flash"
 ```
 
 ## 接入步骤
@@ -17,7 +17,7 @@ export PROVIDER_MODEL="sensenova-6.7-flash-lite"
 1. 确认 OpenCode 当前版本是否支持 OpenAI-compatible provider。
 2. 填写 SenseNova API key。
 3. 填写 Base URL `https://token.sensenova.cn/v1`。
-4. 填写模型名 `sensenova-6.7-flash-lite`。
+4. 填写模型名 `deepseek-flash`；长程多模态 Agent 可选 `kimi-k3`。
 5. 运行最小 prompt。
 
 ## 待核验

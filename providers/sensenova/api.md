@@ -14,14 +14,14 @@
 ```bash
 export PROVIDER_API_KEY="你的 SenseNova API key"
 export PROVIDER_BASE_URL="https://token.sensenova.cn/v1"
-export PROVIDER_MODEL="sensenova-6.7-flash-lite"
+export PROVIDER_MODEL="deepseek-flash"
 ```
 
 ## 接入步骤
 
 1. 打开 https://platform.sensenova.cn/docs。
 2. 注册或登录平台并创建 API key。
-3. 选择免费模型，例如 `sensenova-6.7-flash-lite`。
+3. 选择免费模型，热门首选为 `deepseek-flash`，长程多模态 Agent 可选 `kimi-k3`。
 4. 在客户端中配置接入地址、API key、模型名。
 5. 发送最小对话请求验证。
 
@@ -41,9 +41,10 @@ export PROVIDER_MODEL="sensenova-6.7-flash-lite"
 - Base URL：`https://token.sensenova.cn/v1`
 - Chat endpoint：`/chat/completions`
 - API key：SenseNova API key
-- Model：`sensenova-6.7-flash-lite`
+- Model：`deepseek-flash`
 
 ## 官方来源
 
 - Token Plan：https://www.sensenova.cn/token-plan
+- SenseNova 官方模型文档：https://platform.sensenova.cn/docs
 - API 文档：https://github.com/OpenSenseNova/SenseNova6.7/blob/main/API_CN.md

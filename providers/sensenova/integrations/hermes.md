@@ -9,7 +9,7 @@ SenseNova 官方 API 文档提供 OpenAI-compatible 接入；Hermes 专用配置
 ```bash
 export PROVIDER_API_KEY="你的 SenseNova API key"
 export PROVIDER_BASE_URL="https://token.sensenova.cn/v1"
-export PROVIDER_MODEL="sensenova-6.7-flash-lite"
+export PROVIDER_MODEL="deepseek-flash"
 ```
 
 ## 接入步骤

@@ -20,3 +20,4 @@
 | 2026-07-18 | SenseNova Token Plan | 公测免费、免费模型、调用限制 | 已核对 |
 | 2026-07-18 | OpenSenseNova API 文档 | Base URL、Chat endpoint、OpenAI SDK 兼容 | 已核对 |
 | 2026-08-24 | SenseNova 官方截图 | 模型文档、请求地址、Free 公测套餐 | 已截图核对 |
+| 2026-10-04 | SenseNova 官方模型文档 | `deepseek-flash`、`kimi-k3` 的模型名称、Model ID 与能力描述 | 已页面与截图核对 |

@@ -2,21 +2,26 @@
 
 ## 当前状态
 
-- 文档状态：已整理，待实测
+- 文档状态：已更新热门免费模型，待实测
 - API 状态：官方文档已核对
 - 免费模型状态：官网 Token Plan 已核对
 - 接入文档状态：OpenAI-compatible 接入已整理，agent 专用配置待实测
-- 最后核验日期：2026-08-24
+- 最后核验日期：2026-10-04
 
 ## 一句话说明
 
 商汤 SenseNova 提供兼容 OpenAI API 的模型接入服务，官网 Token Plan 显示公测期间可免费使用基础模型。
 
+## 热门免费模型
+
+- **DeepSeek V4.1 Flash**（`deepseek-flash`）：新一代高效通用模型，重点覆盖复杂推理、代码开发、工具调用、视觉理解和多步骤 Agent 工作流。
+- **Kimi K3**（`kimi-k3`）：旗舰开源原生多模态 Agent 模型，拥有 2.8T 参数与 1M Token 上下文，适合长程编程、知识工作和复杂推理。
+
 ## 快速开始
 
 1. 打开商汤 SenseNova 文档。
 2. 注册或登录平台并创建 API key。
-3. 选择免费模型，例如 `sensenova-6.7-flash-lite`。
+3. 优先选择热门免费模型 `deepseek-flash` 或 `kimi-k3`。
 4. 使用 Base URL `https://token.sensenova.cn/v1`。
 5. 在客户端中配置 Base URL、API key、模型名。
 
@@ -28,8 +33,8 @@
 - 接入地址：https://token.sensenova.cn/v1
 - Chat completions endpoint：`https://token.sensenova.cn/v1/chat/completions`
 - 是否 OpenAI-compatible：是
-- 免费模型：`sensenova-6.7-flash-lite`、SenseNova U1 Fast、`glm-5.2`、DeepSeek V4 Flash
-- 推荐免费模型：`sensenova-6.7-flash-lite`
+- 免费模型：`deepseek-flash`、`kimi-k3`、`sensenova-6.7-flash-lite`、SenseNova U1 Fast、`glm-5.2`、DeepSeek V4 Flash
+- 推荐免费模型：`deepseek-flash`
 - 核验状态：已整理，待实测
 
 ## 图片证据
