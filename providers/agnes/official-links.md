@@ -7,6 +7,9 @@
 - 常见接入文档：https://agnes-ai.com/doc/cid1
 - Quick Start：https://agnes-ai.com/doc/quick-start
 - Agnes 3.0 Flash：https://www.agnes-ai.com/en/docs/agnes-30-flash
+- Agnes Image 2.5 Flash：https://www.agnes-ai.com/zh-Hans/docs/agnes-image-25-flash
+- Agnes Video 2.5 Flash：https://www.agnes-ai.com/zh-Hans/docs/agnes-video-25-flash
+- 模型定价：https://www.agnes-ai.com/zh-Hans/docs/pricing
 - Agnes 2.0 Flash：https://agnes-ai.com/doc/agnes-20-flash
 - Agnes Image 2.1 Flash：https://agnes-ai.com/doc/agnes-image-21-flash
 - OpenClaw：https://agnes-ai.com/doc/cid2
@@ -35,3 +38,4 @@
 | 2026-06-24 | Agnes AI 常见接入文档截图 | OpenClaw、HermesAgents、Claude CLI、Claude Desktop、WorkBuddy、Cherry Studio、OpenCode、Codex++ | 已核对 |
 | 2026-07-29 | Agnes AI 调用消费记录截图 | `agnes-2.5-flash` 两条调用记录消费金额均为 0 美分 | 已实测 |
 | 2026-09-08 | Agnes 3.0 Flash 官方文档 | 模型 ID、接口、输入类型、上下文、最大输出与当前 $0 定价 | 已核对，待 API 实测 |
+| 2026-10-20 | Agnes 官方模型定价与模型文档 | Image 2.5 Flash 当前免费；Video 2.5 Flash 当前限时免费、720P 及异步接口 | 已核对，待真实 key 实测 |
