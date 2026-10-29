@@ -3,10 +3,10 @@
 <p align="center">免费 LLM 供应商、模型与 API 接入资料库</p>
 
 <p align="center">
-  <a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-9-2563eb?style=flat-square" alt="供应商数量"></a>
+  <a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-10-2563eb?style=flat-square" alt="供应商数量"></a>
   <a href="https://github.com/konglong87/free-AI-free-token/tree/main/providers"><img src="https://img.shields.io/badge/models-curated-059669?style=flat-square" alt="模型清单"></a>
   <a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/docs-Markdown-f59e0b?style=flat-square" alt="文档格式"></a>
-  <a href="https://github.com/konglong87/free-AI-free-token/commits/main"><img src="https://img.shields.io/badge/updated-2026--08--27-7c3aed?style=flat-square" alt="最后更新日期"></a>
+  <a href="https://github.com/konglong87/free-AI-free-token/commits/main"><img src="https://img.shields.io/badge/updated-2026--10--29-7c3aed?style=flat-square" alt="最后更新日期"></a>
 </p>
 
 <p align="center">
@@ -59,6 +59,10 @@
 <tr>
 <td valign="top"><a href="providers/sensenova/"><strong>商汤 SenseNova</strong></a><br><sub>📝 文本生成<br>👁 图片理解</sub></td>
 <td valign="top"><strong>文本生成 · 图片理解</strong><br><strong>DeepSeek V4.1 Flash</strong><br><code>deepseek-flash</code><br><strong><code>kimi-k3</code></strong><br><br><strong>文本生成</strong><br><code>sensenova-6.7-flash-lite</code><br><code>glm-5.2</code><br><br><a href="https://token.sensenova.cn/v1">API</a> · <a href="https://www.sensenova.cn/">注册</a> · <a href="providers/sensenova/models.md">完整模型</a><br><sub>状态：✅ · <a href="https://platform.sensenova.cn/docs">官方模型文档</a></sub></td>
+</tr>
+<tr>
+<td valign="top"><a href="providers/iflytek-spark/"><strong>科大讯飞星火</strong></a><br><sub>📝 文本生成</sub></td>
+<td valign="top"><strong>文本生成 · 10 亿 Token 限时赠额</strong><br><code>spark-x2.6</code><br><br><a href="https://maas-api.cn-huabei-1.xf-yun.com/v2">API</a> · <a href="https://maas.xfyun.cn/">领取入口</a> · <a href="providers/iflytek-spark/models.md">完整模型</a><br><sub>状态：🟡 官方活动与接口已核对，领取条件 / 调用待实测 · <a href="providers/iflytek-spark/official-links.md">官方来源</a></sub></td>
 </tr>
 <tr>
 <td valign="top"><a href="providers/openrouter/"><strong>OpenRouter</strong></a><br><sub>📝 文本生成</sub></td>
