@@ -2,11 +2,23 @@
 
 ## 协议与地址
 
-| 客户端协议 | Base URL（填入客户端） | 请求路径（SDK 自动拼接） | 鉴权 |
-| --- | --- | --- | --- |
-| OpenAI Chat Completions | `https://maas-api.cn-huabei-1.xf-yun.com/v2` | `/chat/completions` | `Authorization: Bearer <APIKEY>` |
-| OpenAI Responses | `https://maas-api.cn-huabei-1.xf-yun.com/v1` | `/responses` | `Authorization: Bearer <APIKEY>` |
-| Anthropic Messages / Claude Code | `https://maas-api.cn-huabei-1.xf-yun.com/anthropic` | `/v1/messages` | `x-api-key: <APIKEY>`（Claude Code 用 `ANTHROPIC_AUTH_TOKEN`） |
+### OpenAI Chat Completions
+
+- Base URL：`https://maas-api.cn-huabei-1.xf-yun.com/v2`
+- SDK 拼接路径：`/chat/completions`
+- 鉴权：`Authorization: Bearer <APIKEY>`
+
+### OpenAI Responses（Codex）
+
+- Base URL：`https://maas-api.cn-huabei-1.xf-yun.com/v1`
+- SDK 拼接路径：`/responses`
+- 鉴权：`Authorization: Bearer <APIKEY>`
+
+### Anthropic Messages（Claude Code）
+
+- Base URL：`https://maas-api.cn-huabei-1.xf-yun.com/anthropic`
+- SDK 拼接路径：`/v1/messages`
+- 鉴权：`x-api-key: <APIKEY>`；Claude Code 设置 `ANTHROPIC_AUTH_TOKEN`
 
 不要把三个 Base URL 混用，也不要在 SDK 的 Base URL 里额外填 `/chat/completions`、`/responses` 或 `/v1/messages`。模型 ID：`spark-x2.6`。API Key 可在 MaaS 控制台的「API调用 / APIKEY管理」获取。
 
