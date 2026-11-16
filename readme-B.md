@@ -4,7 +4,7 @@
 
 免费 LLM 供应商、模型与 API 接入资料库
 
-<a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-10-2563eb?style=flat-square" alt="供应商数量"></a>
+<a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-11-2563eb?style=flat-square" alt="供应商数量"></a>
 <a href="https://github.com/konglong87/free-AI-free-token/tree/main/providers"><img src="https://img.shields.io/badge/models-curated-059669?style=flat-square" alt="模型清单"></a>
 <a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/docs-Markdown-f59e0b?style=flat-square" alt="文档格式"></a>
 
@@ -14,10 +14,10 @@
 
 <table width="100%">
 <tr>
-<td width="25%"><strong>10</strong><br><sub>供应商目录</sub></td>
+<td width="25%"><strong>11</strong><br><sub>供应商目录</sub></td>
 <td width="25%"><strong>OpenAI-compatible</strong><br><sub>优先收录</sub></td>
 <td width="25%"><strong>5</strong><br><sub>固定接入文档</sub></td>
-<td width="25%"><strong>2026-10-29</strong><br><sub>最后整理</sub></td>
+<td width="25%"><strong>2026-11-16</strong><br><sub>最后整理</sub></td>
 </tr>
 </table>
 
@@ -58,6 +58,10 @@
 <tr>
 <td valign="top"><a href="providers/iflytek-spark/"><strong>科大讯飞星火</strong></a><br><sub>📝 文本生成</sub></td>
 <td valign="top"><strong>文本生成 · 10 亿 Token 限时赠额</strong><br><code>spark-x2.6</code><br><br><a href="https://maas-api.cn-huabei-1.xf-yun.com/v2">API</a> · <a href="https://maas.xfyun.cn/">领取入口</a> · <a href="providers/iflytek-spark/models.md">完整模型</a><br><sub>状态：🟡 官方活动与接口已核对，领取条件 / 调用待实测 · <a href="providers/iflytek-spark/official-links.md">官方来源</a></sub></td>
+</tr>
+<tr>
+<td valign="top"><a href="providers/lg-exaone/"><strong>LG EXAONE</strong></a><br><sub>📝 文本生成</sub></td>
+<td valign="top"><strong>文本生成 · 免费（非商用，Key 30 天有效）</strong><br><code>k-exaone_v2.5</code><br><br><a href="https://api.exaone.ai/v1">API</a> · <a href="https://docs.exaone.ai">申请入口</a> · <a href="providers/lg-exaone/models.md">完整模型</a><br><sub>状态：🟡 官方公告、接口与条款已核对，申请 / 调用待实测 · <a href="providers/lg-exaone/official-links.md">官方来源</a></sub></td>
 </tr>
 <tr>
 <td valign="top"><a href="providers/openrouter/"><strong>OpenRouter</strong></a><br><sub>📝 文本生成</sub></td>
