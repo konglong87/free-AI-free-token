@@ -26,6 +26,6 @@ agent:
 
 4. 运行 `hermes model` 选择 `exaone` provider 和模型，再在项目目录运行 `hermes`。会话中可用 `/model custom:exaone:k-exaone_v2.5` 切换。
 
-`agent.reasoning_effort` 可选 `low` / `medium` / `high` / `max`。Key 30 天到期后需重新签发并更新环境变量。
+官方 Agent 接入页称 `agent.reasoning_effort` 可选 `low` / `medium` / `high` / `max`；API 参数表只列 `low` / `high` / `max`，若 `medium` 报错改用 `low` 或 `high`。Key 30 天到期后需重新签发并更新环境变量。
 
 来源：[EXAONE 官方 Agent 接入页](https://docs.exaone.ai/ko/docs/agent-start)。

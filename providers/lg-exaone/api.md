@@ -22,7 +22,8 @@ curl 'https://api.exaone.ai/v1/chat/completions' \
   -d '{"model":"k-exaone_v2.5","messages":[{"role":"user","content":"你好"}],"temperature":1.0,"top_p":0.95,"reasoning_effort":"low","stream":false}'
 ```
 
-- 推理始终开启，推理内容在 `choices[0].message.reasoning_content`；`content` 开头可能带 `"\n\n"`，做字符串比较前先 trim。
+- 官方响应示例在 `usage.reasoning_tokens` 中计入推理 Token；流式响应的推理内容在 `delta.reasoning_content`。官方示例中 `content` 以 `"\n\n"` 开头，做字符串比较前先 trim。
+- `reasoning_effort` 在 API 参数表中为 `low` / `high` / `max`（默认 `max`），上面示例用 `low` 以缩短响应。
 - 流式：`"stream": true` 返回 SSE；加 `"stream_options":{"include_usage":true}` 可在最后一个 chunk 拿到用量。
 
 ## 限制与排错

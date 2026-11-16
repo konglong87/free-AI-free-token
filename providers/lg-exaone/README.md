@@ -26,7 +26,7 @@ K-EXAONE 2.5 是 LG AI Research 自研的 Agent 向文本大模型（韩语 / �
 | 模型 ID | `k-exaone_v2.5`（下划线，不是 `K-EXAONE-2.5`） |
 | OpenAI Chat Base URL | `https://api.exaone.ai/v1` |
 | 官方标称上下文 | 524,288 Token（512K），输入 + `max_tokens` 超出返回 400 |
-| 输入 / 输出 | 仅文本；推理始终开启 |
+| 输入 / 输出 | 仅文本；响应含推理 Token（`reasoning_effort` 可调） |
 | 免费方式 | 技术验证阶段免费，非商用；有调用上限，具体数值未公开 |
 | Key 有效期 | 30 天，到期自动停用 |
 | 核验状态 | 官方网页与文档已核对；未持有账号 / Key，未实测申请和 API |

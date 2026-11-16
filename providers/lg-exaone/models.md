@@ -5,8 +5,8 @@
 - **能力**：📝 文本输入 → 文本生成；韩语 / 英语，官方定位为 Agent、代码与工作流自动化。Models 页列出工具调用、结构化输出、流式。
 - **规模**：Models 页标注 750B 参数（31B 激活）。
 - **官方标称上下文**：524,288 Token（512K），`max_tokens` 包含推理 Token；输入 + `max_tokens` 超限返回 400。
-- **推理**：始终开启。`reasoning_effort` 可选 `low` / `medium` / `high` / `max`，推理内容在 `message.reasoning_content`，用量在 `usage.reasoning_tokens`。多轮 Agent 场景可设 `chat_template_kwargs.preserve_thinking=true` 保留历史推理。
-- **推荐采样**：`temperature=1.0`、`top_p=0.95`。
+- **推理**：官方示例的流式和非流式响应都带 `usage.reasoning_tokens`；流式响应的推理内容在 `delta.reasoning_content`。`reasoning_effort` 在 API 参数表中为 `low` / `high` / `max`（默认 `max`），官方 Agent 接入页则写 `low` / `medium` / `high` / `max` 并在示例中用 `medium`，两页不一致，以实际返回为准。`chat_template_kwargs.preserve_thinking`（默认 `false`）控制多轮对话是否保留之前 assistant 轮次的推理。
+- **采样默认值**：`temperature=1.0`、`top_p=0.95`（官方 Agent 示例同样使用这两个值）。
 - **免费方式**：技术验证阶段免费，非商用。
 - **核验**：官方公告与文档已核对，实际调用待实测。
 
