@@ -1,0 +1,65 @@
+slug: volcengine-ark
+name: 火山方舟（豆包）
+verified_at: "2026-11-26"
+base_url: https://ark.cn-beijing.volces.com/api/v3
+openai_compatible: supported
+# 由官方 Messages 端点（/api/compatible/v1/messages）推得，Claude Code 的 ANTHROPIC_BASE_URL 写法待实测；官方 Claude Code 指南针对付费 Coding Plan，不适用
+anthropic_endpoint: https://ark.cn-beijing.volces.com/api/compatible
+free:
+  type: one_time
+  note: 新用户每个模型一次性免费额度（官方示例 50w token，有效期未写）；另有限时活动「协作奖励计划」需授权数据换额度。Coding Plan / Agent Plan 是付费订阅，不算免费
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: 额度用完后继续使用、开启安心体验模式、参加协作奖励计划均需实名认证；免费额度覆盖哪些模型需登录控制台核验
+sources:
+  - {label: 免费推理额度, url: "https://docs.volcengine.com/docs/ark/free-inference-quota"}
+  - {label: 安心体验模式, url: "https://docs.volcengine.com/docs/ark/free-tokens-only-mode"}
+  - {label: 协作奖励计划, url: "https://docs.volcengine.com/docs/ark/collaboration-reward-program?lang=zh"}
+  - {label: 模型列表, url: "https://docs.volcengine.com/docs/ark/model-list?lang=zh"}
+  - {label: Base URL 及鉴权, url: "https://docs.volcengine.com/docs/ark/base-url-and-authentication?lang=zh"}
+  - {label: Messages API, url: "https://docs.volcengine.com/docs/ark/messages-api?lang=zh"}
+home:
+  order: 120
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解]
+  pending_tags: [图片理解]
+  status: pending
+  status_note: 官方文档已核对，控制台额度与调用待实测
+  signup: {label: 注册, url: "https://ark.volcengine.com/region:cn-beijing/apikey"}
+  extras:
+    - {label: 免费额度说明, url: "https://docs.volcengine.com/docs/ark/free-inference-quota"}
+    - {label: 官方来源, url: providers/volcengine-ark/official-links.md}
+models:
+  - id: doubao-seed-2-0-mini-260428
+    capabilities: [文本生成, 图片理解]
+    pending_capabilities: [图片理解]
+    context: 256K
+    rpm: 30000
+    tpm: 5000000
+    note: 官方模型列表标注的最大 RPM / TPM（非刚性保障）；是否在免费额度内待核验
+    home: {pages: [readme, readme-b], group_note: 新用户一次性额度，覆盖范围待核验}
+  - id: doubao-seed-2-1-lite-260915
+    capabilities: [文本生成, 图片理解]
+    pending_capabilities: [图片理解]
+    context: 1024K
+    rpm: 30000
+    tpm: 5000000
+    note: 是否在免费额度内待核验
+    home: {pages: [readme]}
+  - id: doubao-seed-evolving
+    capabilities: [文本生成, 图片理解]
+    pending_capabilities: [图片理解]
+    context: 1024K
+    rpm: 500
+    tpm: 1000000
+    note: 协作奖励计划入口列出的模型；是否在免费额度内待核验
+    home: {pages: [readme]}
+  - id: doubao-seed-2-1-pro-260915
+    capabilities: [文本生成, 图片理解]
+    pending_capabilities: [图片理解]
+    context: 1024K
+    rpm: 500
+    tpm: 1000000
+    note: 是否在免费额度内待核验
