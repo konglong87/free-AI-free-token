@@ -3,7 +3,7 @@
 <p align="center">免费 LLM 供应商、模型与 API 接入资料库</p>
 
 <p align="center">
-  <!-- providers-count:start --><a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-11-2563eb?style=flat-square" alt="供应商数量"></a><!-- providers-count:end -->
+  <!-- providers-count:start --><a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-17-2563eb?style=flat-square" alt="供应商数量"></a><!-- providers-count:end -->
   <a href="https://github.com/konglong87/free-AI-free-token/tree/main/providers"><img src="https://img.shields.io/badge/models-curated-059669?style=flat-square" alt="模型清单"></a>
   <a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/docs-Markdown-f59e0b?style=flat-square" alt="文档格式"></a>
   <a href="https://github.com/konglong87/free-AI-free-token/commits/main"><img src="https://img.shields.io/badge/updated-2026--11--16-7c3aed?style=flat-square" alt="最后更新日期"></a>
@@ -92,6 +92,30 @@
 <tr>
 <td valign="top"><a href="providers/ai21-labs/"><strong>AI21 Labs</strong></a><br><sub>📝 文本生成</sub></td>
 <td valign="top"><strong>文本生成</strong><br><code>jamba-large-1-7</code><br><code>jamba-mini-2</code><br><br><a href="https://api.ai21.com/studio/v1">API</a> · <a href="https://studio.ai21.com/">注册</a> · <a href="providers/ai21-labs/models.md">完整模型</a><br><sub>状态：🟡</sub></td>
+</tr>
+<tr>
+<td valign="top"><a href="providers/volcengine-ark/"><strong>火山方舟（豆包）</strong></a><br><sub>📝 文本生成<br>👁 图片理解<br>（待核验）</sub></td>
+<td valign="top"><strong>文本生成 · 图片理解 · 新用户一次性额度，覆盖范围待核验（待核验）</strong><br><code>doubao-seed-2-0-mini-260428</code><br><br><strong>文本生成 · 图片理解（待核验）</strong><br><code>doubao-seed-2-1-lite-260915</code><br><code>doubao-seed-evolving</code><br><br><a href="https://ark.cn-beijing.volces.com/api/v3">API</a> · <a href="https://ark.volcengine.com/region:cn-beijing/apikey">注册</a> · <a href="providers/volcengine-ark/models.md">完整模型</a><br><sub>状态：🟡 官方文档已核对，控制台额度与调用待实测 · <a href="https://docs.volcengine.com/docs/ark/free-inference-quota">免费额度说明</a> · <a href="providers/volcengine-ark/official-links.md">官方来源</a></sub></td>
+</tr>
+<tr>
+<td valign="top"><a href="providers/siliconflow/"><strong>硅基流动（国内站）</strong></a><br><sub>📝 文本生成<br>👁 图片理解</sub></td>
+<td valign="top"><strong>文本生成 · 永久免费，需实名认证</strong><br><code>Qwen/Qwen3-8B</code><br><br><strong>文本生成</strong><br><code>THUDM/GLM-Z1-9B-0414</code><br><br><strong>文本生成 · 图片理解</strong><br><code>Qwen/Qwen3.5-4B</code><br><br><strong>图片理解</strong><br><code>deepseek-ai/DeepSeek-OCR</code><br><br><a href="https://api.siliconflow.cn/v1">API</a> · <a href="https://cloud.siliconflow.cn">注册</a> · <a href="providers/siliconflow/models.md">完整模型</a><br><sub>状态：🟡 官方页面已核对，免费模型 ID 与限速待登录实测 · <a href="https://www.siliconflow.cn/pricing">价格页（免费标记）</a> · <a href="providers/siliconflow/official-links.md">官方来源</a></sub></td>
+</tr>
+<tr>
+<td valign="top"><a href="providers/cerebras/"><strong>Cerebras</strong></a><br><sub>📝 文本生成<br>👁 图片理解</sub></td>
+<td valign="top"><strong>文本生成 · $5 一次性额度，30 天过期，需绑定支付方式</strong><br><code>gpt-oss-120b</code><br><br><strong>文本生成 · 图片理解</strong><br><code>qwen-3.8-27b</code><br><br><a href="https://api.cerebras.ai/v1">API</a> · <a href="https://cloud.cerebras.ai">注册</a> · <a href="providers/cerebras/models.md">完整模型</a><br><sub>状态：🟡 官方文档已核对，注册与调用待实测 · <a href="https://inference-docs.cerebras.ai/support/rate-limits">限流说明</a> · <a href="providers/cerebras/official-links.md">官方来源</a></sub></td>
+</tr>
+<tr>
+<td valign="top"><a href="providers/google-ai-studio/"><strong>Google AI Studio（Gemini）</strong></a><br><sub>📝 文本生成<br>👁 图片理解</sub></td>
+<td valign="top"><strong>文本生成 · 图片理解 · 永久免费层，数据用于改进产品</strong><br><code>gemini-4-hydrogen</code><br><br><strong>文本生成</strong><br><code>gemini-3.8-flash</code><br><code>gemini-3.6-flash</code><br><code>gemini-3.5-flash-lite</code><br><br><a href="https://generativelanguage.googleapis.com/v1beta/openai/">API</a> · <a href="https://aistudio.google.com">注册</a> · <a href="providers/google-ai-studio/models.md">完整模型</a><br><sub>状态：🟡 官方文档已核对，免费层数值限额与调用待实测 · <a href="https://aistudio.google.com/docs/pricing">免费层定价</a> · <a href="providers/google-ai-studio/official-links.md">官方来源</a></sub></td>
+</tr>
+<tr>
+<td valign="top"><a href="providers/cloudflare-workers-ai/"><strong>Cloudflare Workers AI</strong></a><br><sub>📝 文本生成<br>👁 图片理解</sub></td>
+<td valign="top"><strong>文本生成 · 每日 10,000 Neurons 免费</strong><br><code>@cf/openai/gpt-oss-120b</code><br><br><strong>文本生成</strong><br><code>@cf/openai/gpt-oss-20b</code><br><br><strong>文本生成 · 图片理解</strong><br><code>@cf/google/gemma-4-26b-a4b-it</code><br><code>@cf/qwen/qwen3.8-27b</code><br><br><strong>文本生成</strong><br><code>@cf/zai-org/glm-4.7-flash</code><br><br><a href="https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1">API</a> · <a href="https://dash.cloudflare.com">注册</a> · <a href="providers/cloudflare-workers-ai/models.md">完整模型</a><br><sub>状态：🟡 官方文档已核对，账号注册与调用待实测 · <a href="https://developers.cloudflare.com/workers-ai/platform/pricing/">免费额度说明</a> · <a href="providers/cloudflare-workers-ai/official-links.md">官方来源</a></sub></td>
+</tr>
+<tr>
+<td valign="top"><a href="providers/cohere/"><strong>Cohere</strong></a><br><sub>📝 文本生成<br>👁 图片理解</sub></td>
+<td valign="top"><strong>文本生成 · Trial key 每月 1,000 次，不得商用</strong><br><code>command-a-03-2025</code><br><br><strong>文本生成</strong><br><code>command-a-reasoning-08-2025</code><br><code>north-mini-code-1.0</code><br><br><strong>文本生成 · 图片理解</strong><br><code>command-a-vision-07-2025</code><br><br><a href="https://api.cohere.ai/compatibility/v1">API</a> · <a href="https://dashboard.cohere.com/api-keys">注册</a> · <a href="providers/cohere/models.md">完整模型</a><br><sub>状态：🟡 官方文档已核对，注册与调用待实测；Trial key 不得商用 · <a href="https://docs.cohere.com/docs/rate-limits">限流说明</a> · <a href="providers/cohere/official-links.md">官方来源</a></sub></td>
 </tr>
 <tr>
 <td valign="top"><a href="providers/_template/"><strong>模板</strong></a><br><sub>能力待填写</sub></td>
