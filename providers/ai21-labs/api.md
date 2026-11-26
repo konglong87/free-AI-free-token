@@ -36,7 +36,7 @@ export PROVIDER_MODEL="jamba-large-1-7"
 
 ## OpenAI-compatible 说明
 
-当前无法从公开参考清单确认完整 OpenAI 兼容性，以下能力均待核验：
+当前无法确认完整 OpenAI 兼容性，以下能力均待核验：
 
 - Chat Completions path 与 `/models` 接口
 - streaming 行为

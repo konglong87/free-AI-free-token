@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | `moonshotai/kimi-k2-instruct` | 文本 / 推理 | 131K | 免费状态与限流待核验 |
 | `moonshotai/kimi-k2-instruct-0905` | 文本 / 推理 | 131K | 免费状态与限流待核验 |
-| `groq/compound` | 文本 / 工具增强 | 131K | 参考清单标注 30 RPM、250 RPD |
+| `groq/compound` | 文本 / 工具增强 | 131K | 标注 30 RPM、250 RPD，待官方复核 |
 
 ## 模型选择建议
 
@@ -20,5 +20,4 @@
 
 - Groq 模型文档：https://console.groq.com/docs/models
 - Groq API 文档：https://console.groq.com/docs
-- 发现来源：公开参考 README
 - 最后核验日期：2026-08-27

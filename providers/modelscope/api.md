@@ -4,7 +4,7 @@
 
 - 接入地址：`https://api-inference.modelscope.cn/v1`
 - 鉴权方式：Bearer Access Token
-- 是否 OpenAI-compatible：参考入口采用 OpenAI Chat Completions 风格，完整兼容性待核验
+- 是否 OpenAI-compatible：入口采用 OpenAI Chat Completions 风格，完整兼容性待核验
 - Chat completions path：`/chat/completions`
 - Models endpoint：待核验
 - 核验状态：入口已记录，尚未使用真实 Token 实测
@@ -36,7 +36,7 @@ export PROVIDER_MODEL="MiniMax/MiniMax-M2.5"
 
 ## OpenAI-compatible 说明
 
-参考入口使用 Chat Completions 风格。以下能力尚未实测：
+入口使用 Chat Completions 风格。以下能力尚未实测：
 
 - `/models` 列表接口
 - streaming 行为

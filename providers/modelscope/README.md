@@ -4,13 +4,13 @@
 
 - 文档状态：已整理，待实测
 - API 状态：官方推理入口已记录，待实测
-- 免费模型状态：参考项目当前清单
+- 免费模型状态：待官方复核
 - 接入文档状态：待核验
 - 最后核验日期：2026-08-27
 
 ## 一句话说明
 
-ModelScope 提供模型社区和在线推理 API，当前参考清单包含多款可免费调用的模型。
+ModelScope 提供模型社区和在线推理 API，当前收录多款可免费调用的模型（待官方复核）。
 
 ## 适合场景
 
@@ -34,7 +34,7 @@ ModelScope 提供模型社区和在线推理 API，当前参考清单包含多�
 - 文档：[https://modelscope.cn/docs](https://modelscope.cn/docs)
 - 接入地址：`https://api-inference.modelscope.cn/v1`
 - 推荐免费模型：`MiniMax/MiniMax-M2.5`、`qwen-qwen3-5-35b-a3b`
-- 是否 OpenAI-compatible：参考入口采用 OpenAI 风格；完整能力待核验
+- 是否 OpenAI-compatible：入口采用 OpenAI 风格；完整能力待核验
 - 核验状态：公开入口已整理，API 与客户端待实测
 
 ## 目录

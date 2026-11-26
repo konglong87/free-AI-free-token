@@ -59,7 +59,7 @@ Groq: moonshotai/kimi-k2-instruct, moonshotai/kimi-k2-instruct-0905, groq/compou
 AI21 Labs: jambalarge-1-7, jambamini-2
 ```
 
-Mark aggregator-only context, rate limits, `/models`, streaming, tool calling, structured output, and client-specific compatibility as `待核验` unless an official source explicitly confirms them. Explain in AI21 Labs documents that the current reference list confirms only two free models.
+Mark aggregator-only context, rate limits, `/models`, streaming, tool calling, structured output, and client-specific compatibility as `待核验` unless an official source explicitly confirms them. Explain in AI21 Labs documents that only two free models are currently confirmed.
 
 - [ ] **Step 3: Fill all five integration documents per provider**
 

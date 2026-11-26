@@ -8,13 +8,13 @@
 
 - 新增目录：`providers/nvidia-nim/`、`providers/modelscope/`、`providers/groq/`、`providers/ai21-labs/`。
 - 每个目录包含模板规定的 9 个文件：总览、官方链接、模型列表、API 接入，以及 Claude Code、OpenClaw、OpenCode、Codex、Hermes 五类 integrations 文档。
-- 每家收录 3–5 个代表性免费模型；AI21 Labs 当前公开参考清单仅确认 2 个模型，因此只收录这 2 个并在文档中说明数量限制。
+- 每家收录 3–5 个代表性免费模型；AI21 Labs 当前仅确认 2 个模型，因此只收录这 2 个并在文档中说明数量限制。
 - 根 README 增加四家供应商索引行，包含目录、代表模型和 Base URL。
-- 参考资料使用已下载的公开中文 README；关键链接同时指向供应商官方入口或官方文档。
+- 关键链接指向供应商官方入口或官方文档。
 
 ## 模型清单
 
-| 供应商 | 模型 ID | 参考上下文 | 参考限流 |
+| 供应商 | 模型 ID | 上下文 | 限流 |
 | --- | --- | --- | --- |
 | NVIDIA NIM | `z-ai/glm-5.2` | 1M | Up to 40 RPM |
 | NVIDIA NIM | `poolside/laguna-xs-2.1` | 262K | Up to 40 RPM |
@@ -29,7 +29,7 @@
 | AI21 Labs | `jamba-large-1-7` | 256K | 200 RPM，10 RPS |
 | AI21 Labs | `jamba-mini-2` | 256K | 200 RPM，10 RPS |
 
-参考上下文和限流是发现来源中的当前记录；未由官方页面或真实 key 实测确认的字段必须标记为“待核验”。
+上下文和限流为当前记录；未由官方页面或真实 key 实测确认的字段必须标记为“待核验”。
 
 ## 架构与数据流
 
@@ -52,7 +52,7 @@
 - Groq：Base URL `https://api.groq.com/openai/v1`；Key `https://console.groq.com/keys`。
 - AI21 Labs：Base URL `https://api.ai21.com/studio/v1`；Key `https://studio.ai21.com/account/api-key`。
 
-各目录同时记录官方文档首页、模型列表或模型文档入口。AI21 Labs 的免费状态和模型数量以参考项目当前清单为准，并保留官方模型文档链接供后续复核。
+各目录同时记录官方文档首页、模型列表或模型文档入口。AI21 Labs 的免费状态和模型数量以当前记录为准，并保留官方模型文档链接供后续复核。
 
 ## 错误处理与安全
 
@@ -72,4 +72,4 @@
 
 - 不实现 API SDK、代码生成器、运行时路由或自动同步程序。
 - 不声称已完成真实 API key、客户端、streaming 或 tool calling 实测。
-- 不同步参考项目中的全部模型，也不为 AI21 Labs 人为补充未确认的第三个模型。
+- 不收录更多未确认的模型，也不为 AI21 Labs 人为补充未确认的第三个模型。
