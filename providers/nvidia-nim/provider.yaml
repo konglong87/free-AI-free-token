@@ -7,17 +7,21 @@ openai_compatible: unverified
 anthropic_endpoint: null
 free:
   type: unknown
-  note: 免费模型与限流待官方复核
+  note: 官方称 NVIDIA 开发者计划成员可免费访问 NIM API 端点用于原型验证；额度或限速方式官方未写明
 requirements:
   credit_card: unknown
   real_name: unknown
   region: unknown
   other: null
+usage_notes:
+  - 免费端点是试用服务（trial service），只用于原型和测试；生产使用需 NVIDIA AI Enterprise 授权
 sources:
   - {label: 官网, url: "https://www.nvidia.com/"}
   - {label: 模型目录, url: "https://build.nvidia.com/models"}
   - {label: API key 页面, url: "https://build.nvidia.com/settings/api-keys"}
   - {label: NIM 文档, url: "https://docs.nvidia.com/nim/"}
+  - {label: NIM API 说明, url: "https://docs.api.nvidia.com/nim/docs/product"}
+  - {label: 公开模型列表, url: "https://integrate.api.nvidia.com/v1/models"}
 home:
   order: 110
   pages: [readme, readme-b]
@@ -32,7 +36,7 @@ models:
     capabilities: [文本生成]
     context: 1M
     rpm: 40
-    note: RPM 为 Up to 值
+    note: RPM 为 Up to 值；2026-11-26 未出现在公开 /v1/models 列表，可用性待实测
     home: {pages: [readme, readme-b]}
   - id: poolside/laguna-xs-2.1
     capabilities: [文本生成]
@@ -44,10 +48,15 @@ models:
     capabilities: [文本生成]
     context: 202K
     rpm: 40
-    note: RPM 为 Up to 值
+    note: RPM 为 Up to 值；2026-11-26 未出现在公开 /v1/models 列表，可用性待实测
     home: {pages: [readme]}
   - id: qwen/qwen3.5-397b-a17b
     capabilities: [文本生成]
     context: 262K
-    note: 免费状态与限流待核验
+    note: 免费状态与限流待核验；2026-11-26 未出现在公开 /v1/models 列表，可用性待实测
     home: {pages: [readme]}
+  - id: nvidia/nemotron-3-ultra-550b-a55b
+    capabilities: [文本生成]
+    note: 2026-11-26 出现在公开 /v1/models 列表；工具调用待实测
+    recommended: true
+    tool_calling: pending

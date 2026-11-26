@@ -77,7 +77,7 @@
 <td valign="top"><strong>文本生成 · 免费（非商用，Key 30 天有效）</strong><br><code>k-exaone_v2.5</code><br><br><a href="https://api.exaone.ai/v1">API</a> · <a href="https://docs.exaone.ai">申请入口</a> · <a href="providers/lg-exaone/models.md">完整模型</a><br><sub>状态：🟡 官方公告、接口与条款已核对，申请 / 调用待实测 · <a href="providers/lg-exaone/official-links.md">官方来源</a></sub></td>
 </tr>
 <tr>
-<td valign="top"><a href="providers/openrouter/"><strong>OpenRouter</strong></a><br><sub>📝 文本生成</sub></td>
+<td valign="top"><a href="providers/openrouter/"><strong>OpenRouter</strong></a><br><sub>📝 文本生成</sub><br><br><sub>免费方式：每日额度</sub></td>
 <td valign="top"><strong>文本生成</strong><br><code>*:free</code> 模型（能力随具体模型变化）<br><br><a href="https://openrouter.ai/api/v1">API</a> · <a href="https://openrouter.ai/">注册</a> · <a href="providers/openrouter/models.md">完整模型</a><br><sub>状态：✅</sub></td>
 </tr>
 <tr>
@@ -101,7 +101,7 @@
 <td valign="top"><strong>文本生成 · $5 一次性额度，30 天过期，需绑定支付方式</strong><br><code>gpt-oss-120b</code><br><br><strong>文本生成 · 图片理解</strong><br><code>qwen-3.8-27b</code><br><br><a href="https://api.cerebras.ai/v1">API</a> · <a href="https://cloud.cerebras.ai">注册</a> · <a href="providers/cerebras/models.md">完整模型</a><br><sub>状态：🟡 官方文档已核对，注册与调用待实测 · <a href="https://inference-docs.cerebras.ai/support/rate-limits">限流说明</a> · <a href="providers/cerebras/official-links.md">官方来源</a></sub></td>
 </tr>
 <tr>
-<td valign="top"><a href="providers/google-ai-studio/"><strong>Google AI Studio（Gemini）</strong></a><br><sub>📝 文本生成<br>👁 图片理解</sub><br><br><sub>免费方式：长期免费</sub></td>
+<td valign="top"><a href="providers/google-ai-studio/"><strong>Google AI Studio（Gemini）</strong></a><br><sub>📝 文本生成<br>👁 图片理解</sub><br><br><sub>免费方式：长期免费<br>门槛：无需绑卡 · 有地区限制</sub></td>
 <td valign="top"><strong>文本生成 · 图片理解 · 永久免费层，数据用于改进产品</strong><br><code>gemini-4-hydrogen</code><br><br><strong>文本生成</strong><br><code>gemini-3.8-flash</code><br><br><a href="https://generativelanguage.googleapis.com/v1beta/openai/">API</a> · <a href="https://aistudio.google.com">注册</a> · <a href="providers/google-ai-studio/models.md">完整模型</a><br><sub>状态：🟡 官方文档已核对，免费层数值限额与调用待实测 · <a href="https://aistudio.google.com/docs/pricing">免费层定价</a> · <a href="providers/google-ai-studio/official-links.md">官方来源</a></sub></td>
 </tr>
 <tr>

@@ -30,12 +30,12 @@ models:
   - id: moonshotai/kimi-k2-instruct
     capabilities: [文本生成]
     context: 131K
-    note: 免费状态与限流待核验
+    note: 免费状态与限流待核验；官方弃用页可能已列出 Kimi K2 系列，待复核
     home: {pages: [readme, readme-b]}
   - id: moonshotai/kimi-k2-instruct-0905
     capabilities: [文本生成]
     context: 131K
-    note: 免费状态与限流待核验
+    note: 免费状态与限流待核验；官方弃用页可能已列出该模型（关停 2026-04-15，替代为 openai/gpt-oss-120b），官方页面无法直接打开，待复核
     home: {pages: [readme]}
   - id: groq/compound
     capabilities: [文本生成]
@@ -43,3 +43,9 @@ models:
     rpm: 30
     rpd: 250
     home: {pages: [readme, readme-b]}
+  - id: openai/gpt-oss-120b
+    capabilities: [文本生成]
+    context: 131K
+    note: 官方文档无法直接打开，模型页能力含 Tool Use 的说法待复核
+    recommended: true
+    tool_calling: pending

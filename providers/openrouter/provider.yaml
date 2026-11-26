@@ -1,22 +1,27 @@
 slug: openrouter
 name: OpenRouter
-verified_at: "2026-06-24"
+verified_at: "2026-11-26"
 base_url: https://openrouter.ai/api/v1
 openai_compatible: supported
 anthropic_endpoint: null
 free:
-  type: unknown
-  note: 免费模型通常带 :free 后缀，且会变化；以官方模型列表和模型接口为准
+  type: daily
+  note: 免费模型带 :free 后缀，按 UTC 每日计次：每分钟 20 次；累计购买不足 10 credits 时每天 50 次，购满 10 credits 后每天 1,000 次。免费模型会变化，以官方模型接口为准
 requirements:
   credit_card: unknown
   real_name: unknown
   region: unknown
   other: null
+usage_notes:
+  - 免费模型每分钟 20 次；累计购买不足 10 credits 时每天只有 50 次
+  - 免费模型列表经常变化，原有模型可能下线
 sources:
   - {label: 官网, url: "https://openrouter.ai/"}
   - {label: Quickstart, url: "https://openrouter.ai/docs/quickstart"}
   - {label: 免费模型筛选, url: "https://openrouter.ai/models?max_price=0"}
   - {label: 模型接口, url: "https://openrouter.ai/api/v1/models"}
+  - {label: 限额, url: "https://openrouter.ai/docs/api-reference/limits"}
+  - {label: FAQ, url: "https://openrouter.ai/docs/faq"}
 home:
   order: 90
   pages: [readme, readme-b]
@@ -32,28 +37,52 @@ models:
     capabilities: [文本生成]
     note: 模型集合，能力随具体模型变化
     home: {pages: [readme, readme-b], suffix: 模型（能力随具体模型变化）}
-  - id: cohere/north-mini-code:free
-    capabilities: [文本生成]
-    context: "256000"
-  - id: qwen/qwen3-coder:free
-    capabilities: [文本生成]
+  - id: inclusionai/ling-3.2-flash:free
+    capabilities: [文本生成, 图片理解]
     context: "1048576"
-  - id: openai/gpt-oss-120b:free
+    tool_calling: supported
+  - id: baidu/ernie-5.5-flash-preview:free
     capabilities: [文本生成]
-    context: "131072"
-  - id: openai/gpt-oss-20b:free
+    context: "1024000"
+    tool_calling: supported
+  - id: liquid/lfm-3-1.7b:free
     capabilities: [文本生成]
-    context: "131072"
-  - id: meta-llama/llama-3.3-70b-instruct:free
+    context: "262144"
+    tool_calling: supported
+  - id: particle-ai/particle-1:free
+    capabilities: [文本生成, 图片理解]
+    context: "1048576"
+    tool_calling: supported
+  - id: recursive/flint-v1.0:free
     capabilities: [文本生成]
-    context: "131072"
-    smoke: true
-  - id: meta-llama/llama-3.2-3b-instruct:free
+    context: "262144"
+    tool_calling: supported
+  - id: nvidia/nemotron-3.5-super-vl:free
+    capabilities: [文本生成, 图片理解]
+    context: "1000000"
+    tool_calling: supported
+  - id: nvidia/nemotron-3.5-lightning:free
     capabilities: [文本生成]
-    context: "131072"
-  - id: nousresearch/hermes-3-llama-3.1-405b:free
-    capabilities: [文本生成]
-    context: "131072"
+    context: "1000000"
+    tool_calling: supported
   - id: nvidia/nemotron-3-ultra-550b-a55b:free
     capabilities: [文本生成]
     context: "1000000"
+    rpm: 20
+    rpd: 50
+    note: 官方模型接口 supported_parameters 含 tools；免费模型 20 RPM，累计购买不足 10 credits 时每天 50 次
+    smoke: true
+    recommended: true
+    tool_calling: supported
+  - id: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
+    capabilities: [文本生成, 图片理解]
+    context: "256000"
+    tool_calling: supported
+  - id: google/gemma-4-26b-a4b-it:free
+    capabilities: [文本生成, 图片理解]
+    context: "262144"
+    tool_calling: supported
+  - id: google/gemma-4-31b-it:free
+    capabilities: [文本生成, 图片理解]
+    context: "262144"
+    tool_calling: supported

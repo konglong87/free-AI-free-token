@@ -32,6 +32,8 @@ models:
     capabilities: [文本生成]
     context: 204K
     note: 免费状态与限流待核验
+    recommended: true
+    tool_calling: pending
     home: {pages: [readme, readme-b]}
   - id: qwen-qwen3-5-35b-a3b
     capabilities: [文本生成]

@@ -13,12 +13,15 @@ requirements:
   real_name: required
   region: unknown
   other: 2026-05-15 起未实名认证账户无法使用平台功能（支付宝人脸识别）；免费模型具体 RPM / TPM 需登录模型详情页查看
+usage_notes:
+  - 需完成实名认证后才能使用全部免费模型
 sources:
   - {label: 价格页, url: "https://www.siliconflow.cn/pricing"}
   - {label: 公开模型中心, url: "https://www.siliconflow.cn/models"}
   - {label: Rate Limits, url: "https://docs.siliconflow.cn/docs/userguide/faqs/rate-limit-and-upgradation"}
   - {label: 实名认证 FAQ, url: "https://docs.siliconflow.cn/docs/userguide/faqs/authentication"}
   - {label: 更新公告, url: "https://docs.siliconflow.cn/docs/release-notes/overview"}
+  - {label: 函数调用指南, url: "https://docs.siliconflow.com/en/userguide/guides/function-calling"}
   - {label: Messages API, url: "https://docs.siliconflow.cn/docs/api/messages-post"}
 home:
   order: 50
@@ -35,7 +38,9 @@ models:
   - id: Qwen/Qwen3-8B
     capabilities: [文本生成]
     context: 128K
-    note: 官方标注工具调用；限速需登录查看
+    note: 官方标注工具调用；限速需登录查看。2026-11-26 复核：官方函数调用指南的支持列表暂未列出该模型，工具调用待实测
+    recommended: true
+    tool_calling: pending
     home: {pages: [readme, readme-b], group_note: 永久免费，需实名认证}
   - id: THUDM/GLM-Z1-9B-0414
     capabilities: [文本生成]

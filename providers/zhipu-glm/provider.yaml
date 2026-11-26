@@ -6,13 +6,15 @@ openai_compatible: supported
 anthropic_endpoint: null
 free:
   type: unknown
-  note: 官方模型概览列出多个 Flash 免费模型；价格页部分模型标注限时免费
+  note: 价格页 glm-4.7-flash、glm-4-flash-250414 输入输出均标「免费」，未写截止日期，但注明「暂不展示免费期结束后的标准价格」；缓存存储为限时免费
 requirements:
   credit_card: unknown
   real_name: unknown
   region: unknown
   other: null
 sources:
+  - {label: GLM-4.7-Flash 模型页, url: "https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash"}
+  - {label: 定价, url: "https://docs.bigmodel.cn/cn/guide/start/pricing"}
   - {label: 官网, url: "https://bigmodel.cn/"}
   - {label: 模型概览, url: "https://docs.bigmodel.cn/cn/guide/start/model-overview"}
   - {label: 价格页, url: "https://bigmodel.cn/pricing"}
@@ -31,6 +33,10 @@ home:
 models:
   - id: glm-4.7-flash
     capabilities: [文本生成]
+    context: 200K
+    note: 官方模型页写明支持工具调用；最大输出 128K；限速按并发数，免费模型具体并发数需登录查看
+    recommended: true
+    tool_calling: supported
     home: {pages: [readme, readme-b]}
   - id: glm-4-flash-250414
     capabilities: [文本生成]

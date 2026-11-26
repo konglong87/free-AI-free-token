@@ -8,10 +8,13 @@ free:
   type: permanent
   note: 新账号默认 Free Tier，按项目限流，官方未写截止日期；免费层输入输出会被用于改进产品（EEA、瑞士、英国适用付费级数据条款）
 requirements:
-  credit_card: unknown
+  credit_card: none
   real_name: unknown
-  region: unknown
-  other: 第二个及以后的免费项目需扫码设备验证（官方称不需要手机号）；除 gemini-decision-1 外，免费层数值限额需登录 AI Studio 查看
+  region: required
+  other: 中国大陆不在官方支持地区列表；第二个及以后的免费项目需扫码设备验证（官方称不需要手机号）；除 gemini-decision-1 外，免费层数值限额需登录 AI Studio 查看
+usage_notes:
+  - 免费层的输入和输出会被用于改进产品，并可能被人工审阅，不要提交敏感信息（EEA、瑞士、英国用户除外）
+  - 中国大陆不在官方支持地区列表
 sources:
   - {label: 定价与免费层, url: "https://aistudio.google.com/docs/pricing"}
   - {label: 限流, url: "https://aistudio.google.com/docs/rate-limits"}
@@ -19,6 +22,7 @@ sources:
   - {label: OpenAI 兼容, url: "https://aistudio.google.com/docs/openai"}
   - {label: 弃用, url: "https://aistudio.google.com/docs/deprecations"}
   - {label: 服务条款, url: "https://aistudio.google.com/docs/terms"}
+  - {label: 账单, url: "https://aistudio.google.com/docs/billing"}
   - {label: 可用地区, url: "https://aistudio.google.com/docs/available-regions"}
 home:
   order: 150
@@ -35,7 +39,9 @@ models:
   - id: gemini-4-hydrogen
     capabilities: [文本生成, 图片理解]
     context: 1M（输入，Gemini 4 系列）
-    note: 官方写明 Gemini 4 系列输入含文本、图片、音频、视频、PDF；免费层限额需登录查看
+    note: 官方写明 Gemini 4 系列输入含文本、图片、音频、视频、PDF；模型页标注支持 Function calling；免费层限额需登录查看
+    recommended: true
+    tool_calling: supported
     home: {pages: [readme, readme-b], group_note: 永久免费层，数据用于改进产品}
   - id: gemini-3.8-flash
     capabilities: [文本生成]
