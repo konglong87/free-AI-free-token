@@ -1,0 +1,70 @@
+slug: cloudflare-workers-ai
+name: Cloudflare Workers AI
+verified_at: "2026-11-26"
+base_url: https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1
+openai_compatible: supported
+anthropic_endpoint: null
+free:
+  type: daily
+  note: Workers Free 账户每天 10,000 Neurons，每日 00:00 UTC 重置；超额返回 429（错误码 3036），不自动扣费。部分新模型需 Workers Paid，免费账户不可用
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: 需要 Cloudflare 账号、账号 ID 与带 Workers AI Read + Edit 权限的 API token；2026-11-20 起 24 个旧模型已下线
+sources:
+  - {label: 定价与免费额度, url: "https://developers.cloudflare.com/workers-ai/platform/pricing/"}
+  - {label: 限流, url: "https://developers.cloudflare.com/workers-ai/platform/limits/"}
+  - {label: 模型目录, url: "https://developers.cloudflare.com/workers-ai/models/"}
+  - {label: OpenAI 兼容, url: "https://developers.cloudflare.com/workers-ai/configuration/open-ai-compatibility/"}
+  - {label: 错误码, url: "https://developers.cloudflare.com/workers-ai/platform/errors/"}
+  - {label: 模型下线公告, url: "https://developers.cloudflare.com/changelog/post/2026-11-05-planned-model-deprecations/"}
+home:
+  order: 160
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解]
+  pending_tags: []
+  status: pending
+  status_note: 官方文档已核对，账号注册与调用待实测
+  signup: {label: 注册, url: "https://dash.cloudflare.com"}
+  extras:
+    - {label: 免费额度说明, url: "https://developers.cloudflare.com/workers-ai/platform/pricing/"}
+    - {label: 官方来源, url: providers/cloudflare-workers-ai/official-links.md}
+models:
+  - id: "@cf/openai/gpt-oss-120b"
+    capabilities: [文本生成]
+    context: 128K
+    note: 官方标注函数调用、推理
+    home: {pages: [readme, readme-b], group_note: "每日 10,000 Neurons 免费"}
+  - id: "@cf/openai/gpt-oss-20b"
+    capabilities: [文本生成]
+    context: 128K
+    home: {pages: [readme]}
+  - id: "@cf/google/gemma-4-26b-a4b-it"
+    capabilities: [文本生成, 图片理解]
+    context: 256K
+    note: 官方标注视觉、推理、函数调用
+    home: {pages: [readme, readme-b]}
+  - id: "@cf/qwen/qwen3.8-27b"
+    capabilities: [文本生成, 图片理解]
+    context: 262,144
+    note: 官方标注视觉、推理、函数调用
+    home: {pages: [readme]}
+  - id: "@cf/zai-org/glm-4.7-flash"
+    capabilities: [文本生成]
+    context: 131,072
+    home: {pages: [readme]}
+  - id: "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+    capabilities: [文本生成]
+    context: 24K
+  - id: "@cf/meta/llama-4-scout-17b-16e-instruct"
+    capabilities: [文本生成, 图片理解]
+    context: 131K
+  - id: "@cf/mistralai/mistral-small-3.1-24b-instruct"
+    capabilities: [文本生成, 图片理解]
+    pending_capabilities: [图片理解]
+    context: 128K
+    note: 能力徽标只列函数调用，介绍文字写有视觉理解，两处不一致
+  - id: "@cf/meta/llama-3.2-11b-vision-instruct"
+    capabilities: [图片理解]
+    context: 128K
