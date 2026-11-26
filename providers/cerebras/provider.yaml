@@ -6,7 +6,7 @@ openai_compatible: supported
 anthropic_endpoint: null
 free:
   type: one_time
-  note: 新账号绑定有效支付方式后获得 $5 一次性试用额度，激活后 30 天过期；没有永久免费层。试用层上下文约为付费层的一半
+  note: 新账号绑定有效支付方式后获得 $5 一次性试用额度，激活后 30 天过期；官方页面未见永久免费层。试用层上下文约为付费层的一半
 requirements:
   credit_card: required
   real_name: unknown
