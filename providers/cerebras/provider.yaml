@@ -1,0 +1,46 @@
+slug: cerebras
+name: Cerebras
+verified_at: "2026-11-26"
+base_url: https://api.cerebras.ai/v1
+openai_compatible: supported
+anthropic_endpoint: null
+free:
+  type: one_time
+  note: 新账号绑定有效支付方式后获得 $5 一次性试用额度，激活后 30 天过期；没有永久免费层。试用层上下文约为付费层的一半
+requirements:
+  credit_card: required
+  real_name: unknown
+  region: unknown
+  other: 官方称绑定支付方式不会扣费、不会自动开通付费；到期或用完后 API 与 Playground 暂停
+sources:
+  - {label: 定价页, url: "https://www.cerebras.ai/pricing"}
+  - {label: 账号与计费, url: "https://inference-docs.cerebras.ai/console/account-billing"}
+  - {label: 限流, url: "https://inference-docs.cerebras.ai/support/rate-limits"}
+  - {label: 模型清单, url: "https://inference-docs.cerebras.ai/models/overview"}
+  - {label: 弃用页, url: "https://inference-docs.cerebras.ai/support/deprecation"}
+  - {label: OpenAI 兼容, url: "https://inference-docs.cerebras.ai/resources/openai"}
+home:
+  order: 140
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解]
+  pending_tags: []
+  status: pending
+  status_note: 官方文档已核对，注册与调用待实测
+  signup: {label: 注册, url: "https://cloud.cerebras.ai"}
+  extras:
+    - {label: 限流说明, url: "https://inference-docs.cerebras.ai/support/rate-limits"}
+    - {label: 官方来源, url: providers/cerebras/official-links.md}
+models:
+  - id: gpt-oss-120b
+    capabilities: [文本生成]
+    context: 65K（试用）
+    rpm: 5
+    tpd: 1000000
+    note: 试用层总 TPM 90K；付费层上下文 131K
+    home: {pages: [readme, readme-b], group_note: $5 一次性额度，30 天过期，需绑定支付方式}
+  - id: qwen-3.8-27b
+    capabilities: [文本生成, 图片理解]
+    context: 64K（试用）
+    rpm: 300
+    note: 试用层总 TPM 750K（临时上调，标准值 450K）；图片仅 base64 的 PNG / JPEG，试用每请求 2 张
+    home: {pages: [readme, readme-b]}
