@@ -17,6 +17,7 @@ requirements:                  # 使用门槛
   region: unknown
   other: null
 sources: []                    # 官方来源：- {label: 官网, url: "https://..."}
+usage_notes: []                # 用户必须知道的使用限制（输入用于训练、禁止商用、需实名等），每条一句，须有官方来源
 home:
   order: 999                   # 首页排序，越小越靠前，不可重复
   pages: [readme, readme-b]    # 出现在哪些首页；模板本身不会出现在首页
@@ -35,4 +36,6 @@ models: []
 #    rpm: null                     # 可选：rpm / rpd / tpm / tpd
 #    note: null
 #    smoke: true                   # 可选：实测（catalog smoke）用它发 chat；每家最多一个，须为文本生成模型；省略则取第一个上首页的文本模型
+#    recommended: true             # 可选：推荐给代码智能体的默认模型（catalog export 的 recommended_model）；每家最多一个，须为文本生成模型
+#    tool_calling: pending         # 可选：supported（官方确认支持工具调用）| pending（待核验）| unsupported；省略视为 pending
 #    home: {pages: [readme, readme-b]}   # 省略则不上首页

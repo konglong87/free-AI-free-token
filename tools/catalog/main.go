@@ -4,6 +4,7 @@
 //	go run . -check   只检查：校验失败或生成结果与已提交内容不一致时以非零状态退出
 //	go run . smoke    用环境变量里的 key 实测各家 /models 与 chat（-write 回写 verified_at）
 //	go run . stale    列出 verified_at 为空或过期的供应商（Markdown）
+//	go run . export   导出供应商目录 JSON（-only 只导出指定 slug，-o 写入文件）
 package main
 
 import (
@@ -20,6 +21,8 @@ func main() {
 			os.Exit(smokeCommand(os.Args[2:]))
 		case "stale":
 			os.Exit(staleCommand(os.Args[2:]))
+		case "export":
+			os.Exit(exportCommand(os.Args[2:]))
 		}
 	}
 	root := flag.String("root", "", "仓库根目录（默认从当前目录向上查找）")

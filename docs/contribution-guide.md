@@ -31,6 +31,19 @@ cd tools/catalog && go run .   # 重新生成 README.md / readme-B.md 的供应�
 - `free.type`、`requirements` 核验后会显示在首页左列的「免费方式」「门槛」里；查不到就保持 `unknown`，首页不显示。
 - 模型按列表顺序展示，`home.pages` 决定出现在哪份首页；相邻且能力相同的模型会合并成一组。
 - 生成器会校验必填字段、枚举值、能力标签、slug 与目录名一致、同一家里模型 ID 不重复。
+- `recommended: true` 标出推荐给代码智能体的默认模型（每家最多一个），`tool_calling` 记录工具调用是否经官方确认；`usage_notes` 写用户必须知道的限制（输入用于训练、禁止商用、需实名等）。这三项会进入导出的 JSON。
+
+## 导出目录 JSON
+
+给其他程序（例如桌面端内置的免费模型引导）使用的供应商目录：
+
+```bash
+cd tools/catalog
+go run . export -o /tmp/catalog.json                                  # 导出全部供应商（不含模板）
+go run . export -only zhipu-glm,siliconflow -o /tmp/catalog.json      # 只导出指定供应商，按给定顺序
+```
+
+结构：`{schema_version, generated_at, providers: [...]}`。每家包含 `slug`、`name`、`base_url`、`openai_compatible`、`anthropic_endpoint`（没有则省略）、`free{type,note}`、`requirements{credit_card,real_name,region,other}`、`signup_url`、`status`、`status_note`、`verified_at`、`sources[]`、`recommended_model`（没有设置则为 `null`）、`models[]`、`usage_notes[]`。模型的 `tool_calling` 未填写时导出为 `pending`；`rpm/rpd/tpm/tpd`、`context` 未公布时省略。结构有不兼容变化时 `schema_version` 加一。
 
 ## 实测
 

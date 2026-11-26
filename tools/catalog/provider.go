@@ -26,6 +26,7 @@ var (
 	freeTypes    = []string{"permanent", "daily", "one_time", "promo", "unknown"}
 	reqValues    = []string{"required", "none", "unknown"}
 	statuses     = []string{"ok", "pending"}
+	toolCalling  = []string{"supported", "pending", "unsupported"}
 	slugRe       = regexp.MustCompile(`^[a-z0-9]+(-[a-z0-9]+)*$`)
 )
 
@@ -77,7 +78,9 @@ type Model struct {
 	TPM                 int       `yaml:"tpm"`
 	TPD                 int       `yaml:"tpd"`
 	Note                string    `yaml:"note"`
-	Smoke               bool      `yaml:"smoke"` // 实测（catalog smoke）用这个模型发 chat；省略则取第一个上首页的文本模型
+	Smoke               bool      `yaml:"smoke"`        // 实测（catalog smoke）用这个模型发 chat；省略则取第一个上首页的文本模型
+	Recommended         bool      `yaml:"recommended"`  // 推荐给代码智能体的默认模型（catalog export 的 recommended_model）；每家最多一个
+	ToolCalling         string    `yaml:"tool_calling"` // 工具调用：supported（官方确认）| pending（待核验）| unsupported；省略视为 pending
 	Home                ModelHome `yaml:"home"`
 }
 
@@ -91,6 +94,7 @@ type Provider struct {
 	Free              Free         `yaml:"free"`
 	Requirements      Requirements `yaml:"requirements"`
 	Sources           []Link       `yaml:"sources"`
+	UsageNotes        []string     `yaml:"usage_notes"` // 用户必须知道的使用限制：输入用于训练、禁止商用、需实名等
 	Home              Home         `yaml:"home"`
 	Models            []Model      `yaml:"models"`
 }
@@ -300,7 +304,7 @@ func Validate(p Provider, caps Capabilities, root string) []string {
 		add("models 至少一个模型")
 	}
 	ids := map[string]bool{}
-	smokeModels := 0
+	smokeModels, recommended := 0, 0
 	for i, m := range p.Models {
 		f := fmt.Sprintf("models[%d]", i)
 		if m.ID == "" {
@@ -324,6 +328,15 @@ func Validate(p Provider, caps Capabilities, root string) []string {
 				add("%s(%s) 的 smoke: true 只能用于「%s」模型", f, m.ID, textCapability)
 			}
 		}
+		if m.Recommended {
+			recommended++
+			if !contains(m.Capabilities, textCapability) {
+				add("%s(%s) 的 recommended: true 只能用于「%s」模型", f, m.ID, textCapability)
+			}
+		}
+		if m.ToolCalling != "" {
+			oneOf(f+".tool_calling", m.ToolCalling, toolCalling)
+		}
 		if m.RPM < 0 || m.RPD < 0 || m.TPM < 0 || m.TPD < 0 {
 			add("%s(%s) 的 rpm/rpd/tpm/tpd 不能为负数", f, m.ID)
 		}
@@ -331,6 +344,14 @@ func Validate(p Provider, caps Capabilities, root string) []string {
 	}
 	if smokeModels > 1 {
 		add("最多一个模型可以设置 smoke: true，当前有 %d 个", smokeModels)
+	}
+	if recommended > 1 {
+		add("最多一个模型可以设置 recommended: true，当前有 %d 个", recommended)
+	}
+	for i, n := range p.UsageNotes {
+		if strings.TrimSpace(n) == "" {
+			add("usage_notes[%d] 不能为空", i)
+		}
 	}
 	if !tpl {
 		for _, pg := range h.Pages {

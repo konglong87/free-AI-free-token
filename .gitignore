@@ -10,3 +10,6 @@
 .env
 .env.*
 !.env.example
+
+# Generated exports (tools/catalog export)
+build/
