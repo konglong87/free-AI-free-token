@@ -1,0 +1,43 @@
+slug: sensenova
+name: 商汤 SenseNova
+verified_at: "2026-10-04"
+base_url: https://token.sensenova.cn/v1
+openai_compatible: supported
+anthropic_endpoint: null
+free:
+  type: promo
+  note: 官网 Token Plan 标注公测期间基础模型免费；特殊模型以文档标注为准
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: null
+sources:
+  - {label: 官网, url: "https://www.sensenova.cn/"}
+  - {label: 官方模型文档, url: "https://platform.sensenova.cn/docs"}
+  - {label: Token Plan, url: "https://www.sensenova.cn/token-plan"}
+home:
+  order: 30
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解]
+  pending_tags: []
+  status: ok
+  status_note: null
+  signup: {label: 注册, url: "https://www.sensenova.cn/"}
+  extras:
+    - {label: 官方模型文档, url: "https://platform.sensenova.cn/docs", pages: [readme]}
+    - {label: 官方文档, url: "https://platform.sensenova.cn/docs", pages: [readme-b]}
+models:
+  - id: deepseek-flash
+    capabilities: [文本生成, 图片理解]
+    home: {pages: [readme, readme-b], label: DeepSeek V4.1 Flash}
+  - id: kimi-k3
+    capabilities: [文本生成, 图片理解]
+    context: 1M
+    home: {pages: [readme, readme-b], bold: true}
+  - id: sensenova-6.7-flash-lite
+    capabilities: [文本生成]
+    home: {pages: [readme]}
+  - id: glm-5.2
+    capabilities: [文本生成]
+    home: {pages: [readme]}

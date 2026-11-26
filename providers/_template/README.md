@@ -39,6 +39,7 @@
 
 ## 目录
 
+- [provider.yaml](provider.yaml)（结构化数据，首页供应商表由它生成）
 - [官方链接](official-links.md)
 - [模型列表](models.md)
 - [API 接入](api.md)

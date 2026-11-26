@@ -3,7 +3,7 @@
 <p align="center">免费 LLM 供应商、模型与 API 接入资料库</p>
 
 <p align="center">
-  <a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-11-2563eb?style=flat-square" alt="供应商数量"></a>
+  <!-- providers-count:start --><a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-11-2563eb?style=flat-square" alt="供应商数量"></a><!-- providers-count:end -->
   <a href="https://github.com/konglong87/free-AI-free-token/tree/main/providers"><img src="https://img.shields.io/badge/models-curated-059669?style=flat-square" alt="模型清单"></a>
   <a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/docs-Markdown-f59e0b?style=flat-square" alt="文档格式"></a>
   <a href="https://github.com/konglong87/free-AI-free-token/commits/main"><img src="https://img.shields.io/badge/updated-2026--11--16-7c3aed?style=flat-square" alt="最后更新日期"></a>
@@ -43,6 +43,7 @@
 
 标签只汇总仓库已收录的模型，不代表平台全部能力或永久免费承诺；免费条件、限流和核验状态以供应商目录及官方资料为准。标注「待核验」的能力不作已确认推荐。
 
+<!-- providers:start -->
 <table width="100%">
 <thead>
 <tr><th width="30%">供应商 · 免费能力</th><th width="70%">代表性模型 · 接入</th></tr>
@@ -98,6 +99,7 @@
 </tr>
 </tbody>
 </table>
+<!-- providers:end -->
 
 ## 仓库架构
 
@@ -109,12 +111,15 @@ free-AI-free-token/
 │   └── contribution-guide.md
 ├── providers/
 │   ├── <provider-slug>/
+│   │   ├── provider.yaml
 │   │   ├── README.md
 │   │   ├── official-links.md
 │   │   ├── models.md
 │   │   ├── api.md
 │   │   └── integrations/
 │   └── _template/
+├── tools/
+│   └── catalog/
 └── scripts/
     └── validate-layout.sh
 ```
@@ -133,6 +138,7 @@ free-AI-free-token/
 
 | 文件 | 作用 |
 | --- | --- |
+| `provider.yaml` | 供应商结构化数据，首页供应商表由它生成 |
 | `README.md` | 供应商总览、适用场景、快速开始 |
 | `official-links.md` | 官网、控制台、文档、模型来源和核验记录 |
 | `models.md` | 免费模型、模型能力、上下文和限制 |
@@ -142,10 +148,11 @@ free-AI-free-token/
 ## 新增供应商
 
 1. 复制模板：`cp -R providers/_template providers/<provider-slug>`
-2. 填写五类固定文档和 integrations 文件。
-3. 在本页「免费供应商」表中增加入口。
-4. 运行 `./scripts/validate-layout.sh`。
-5. 保留官方来源链接、核验日期和状态。
+2. 改 `providers/<provider-slug>/provider.yaml`：名称、首页排序、能力标签、模型、链接、状态。
+3. 填写五类固定文档和 integrations 文件。
+4. 运行生成：`cd tools/catalog && go run .`，自动更新本页与 `readme-B.md` 的供应商表和数量；不要手改标记注释之间的内容。
+5. 运行校验：`./scripts/validate-layout.sh`。
+6. 保留官方来源链接、核验日期和状态。
 
 ## 文档与贡献
 

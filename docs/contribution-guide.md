@@ -8,22 +8,34 @@ cp -R providers/_template providers/<provider-slug>
 
 然后按顺序填写：
 
-1. `official-links.md`
-2. `models.md`
-3. `api.md`
-4. `integrations/*`
-5. `README.md`
-6. 根目录 `README.md` 的免费供应商入口
+1. `provider.yaml`：供应商的唯一结构化数据来源（见下文）
+2. `official-links.md`
+3. `models.md`
+4. `api.md`
+5. `integrations/*`
+6. `README.md`
+
+不要手改首页的供应商表。改完 yaml 后运行生成，再运行校验：
+
+```bash
+cd tools/catalog && go run .   # 重新生成 README.md / readme-B.md 的供应商表和数量
+./scripts/validate-layout.sh   # 结构校验；已安装 go 时同时运行 go run . -check
+```
+
+## provider.yaml
+
+字段说明见 `providers/_template/provider.yaml`。要点：
+
+- 数据只来自该供应商的官方来源或本目录已有资料；查不到的写 `null` 或「待核验」，不要猜测。
+- `home.tags`、模型的 `capabilities` 必须使用[统一能力标签](model-capabilities.md)；`home.order` 决定首页顺序，不可重复。
+- 模型按列表顺序展示，`home.pages` 决定出现在哪份首页；相邻且能力相同的模型会合并成一组。
+- 生成器会校验必填字段、枚举值、能力标签、slug 与目录名一致、同一家里模型 ID 不重复。
 
 ## 必填检查
 
-新增或修改供应商后运行：
+新增或修改供应商后运行 `./scripts/validate-layout.sh`。
 
-```bash
-./scripts/validate-layout.sh
-```
-
-校验只检查结构，不代表内容真实。内容真实性必须靠官方来源、原文来源或实际接入结果。
+校验只检查结构和数据格式，不代表内容真实。内容真实性必须靠官方来源、原文来源或实际接入结果。
 
 ## 来源要求
 
@@ -64,9 +76,9 @@ cp -R providers/_template providers/<provider-slug>
 
 ## 首页能力标签
 
-更新免费模型时，同步维护 `README.md` 与 `readme-B.md` 的供应商能力概览和模型分组，使用[统一能力标签](model-capabilities.md)。
+更新免费模型时，在 `provider.yaml` 里维护能力标签和模型分组，再运行生成，同步更新 `README.md` 与 `readme-B.md`，使用[统一能力标签](model-capabilities.md)。
 
-- 先在供应商 `models.md` 记录能力与来源，再汇总到首页；不要根据模型 ID 猜测。
+- 先在供应商 `models.md` 记录能力与来源，再写入 `provider.yaml`；不要根据模型 ID 猜测。
 - 区分图片理解、图片生成与视频生成；未确认的输入方式不要补写。
 - 能力待核验时，供应商标签与模型分组都必须保留「待核验」。
 - 保持两列表格，接入与证据链接放在模型下方；不要继续增加横向列。

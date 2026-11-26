@@ -1,0 +1,35 @@
+slug: lg-exaone
+name: LG EXAONE
+verified_at: "2026-11-16"
+base_url: https://api.exaone.ai/v1
+openai_compatible: supported
+anthropic_endpoint: null
+free:
+  type: promo
+  note: 2026-11-09 官方公告免费开放，称其为技术验证模型，免费期限未公布；条款保留日后收费的可能
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: 仅限非商业用途；API Key 自签发日起 30 天有效，到期自动停用
+sources:
+  - {label: 官方公告, url: "https://www.lgresearch.ai/news/view?seq=755"}
+  - {label: EXAONE API Platform, url: "https://docs.exaone.ai"}
+  - {label: K-EXAONE 2.5 接口说明, url: "https://docs.exaone.ai/ko/docs/k-exaone-2.5"}
+  - {label: 服务条款, url: "https://docs.exaone.ai/ko/terms/terms-of-service"}
+home:
+  order: 50
+  pages: [readme, readme-b]
+  tags: [文本生成]
+  pending_tags: []
+  status: pending
+  status_note: 官方公告、接口与条款已核对，申请 / 调用待实测
+  signup: {label: 申请入口, url: "https://docs.exaone.ai"}
+  extras:
+    - {label: 官方来源, url: providers/lg-exaone/official-links.md}
+models:
+  - id: k-exaone_v2.5
+    capabilities: [文本生成]
+    context: 524,288
+    note: 调用上限具体数值官方未公开，超限返回 429
+    home: {pages: [readme, readme-b], group_note: 免费（非商用，Key 30 天有效）}

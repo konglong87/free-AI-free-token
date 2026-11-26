@@ -1,0 +1,45 @@
+slug: groq
+name: Groq
+verified_at: "2026-08-27"
+base_url: https://api.groq.com/openai/v1
+openai_compatible: supported
+anthropic_endpoint: null
+free:
+  type: unknown
+  note: 免费模型与限流待官方复核
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: null
+sources:
+  - {label: 官网, url: "https://groq.com/"}
+  - {label: 控制台, url: "https://console.groq.com/"}
+  - {label: 文档, url: "https://console.groq.com/docs"}
+  - {label: 模型文档, url: "https://console.groq.com/docs/models"}
+home:
+  order: 100
+  pages: [readme, readme-b]
+  tags: [文本生成]
+  pending_tags: []
+  status: pending
+  status_note: null
+  signup: {label: 注册, url: "https://console.groq.com/"}
+  extras: []
+models:
+  - id: moonshotai/kimi-k2-instruct
+    capabilities: [文本生成]
+    context: 131K
+    note: 免费状态与限流待核验
+    home: {pages: [readme, readme-b]}
+  - id: moonshotai/kimi-k2-instruct-0905
+    capabilities: [文本生成]
+    context: 131K
+    note: 免费状态与限流待核验
+    home: {pages: [readme]}
+  - id: groq/compound
+    capabilities: [文本生成]
+    context: 131K
+    rpm: 30
+    rpd: 250
+    home: {pages: [readme, readme-b]}

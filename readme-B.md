@@ -4,7 +4,7 @@
 
 免费 LLM 供应商、模型与 API 接入资料库
 
-<a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-11-2563eb?style=flat-square" alt="供应商数量"></a>
+<!-- providers-count:start --><a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/providers-11-2563eb?style=flat-square" alt="供应商数量"></a><!-- providers-count:end -->
 <a href="https://github.com/konglong87/free-AI-free-token/tree/main/providers"><img src="https://img.shields.io/badge/models-curated-059669?style=flat-square" alt="模型清单"></a>
 <a href="https://github.com/konglong87/free-AI-free-token"><img src="https://img.shields.io/badge/docs-Markdown-f59e0b?style=flat-square" alt="文档格式"></a>
 
@@ -14,7 +14,7 @@
 
 <table width="100%">
 <tr>
-<td width="25%"><strong>11</strong><br><sub>供应商目录</sub></td>
+<td width="25%"><strong><!-- providers-count:start -->11<!-- providers-count:end --></strong><br><sub>供应商目录</sub></td>
 <td width="25%"><strong>OpenAI-compatible</strong><br><sub>优先收录</sub></td>
 <td width="25%"><strong>5</strong><br><sub>固定接入文档</sub></td>
 <td width="25%"><strong>2026-11-16</strong><br><sub>最后整理</sub></td>
@@ -38,6 +38,7 @@
 
 标签只汇总仓库已收录的模型，不代表平台全部能力或永久免费承诺；免费条件、限流和核验状态以供应商目录及官方资料为准。标注「待核验」的能力不作已确认推荐。
 
+<!-- providers:start -->
 <table width="100%">
 <thead>
 <tr><th width="30%">供应商 · 免费能力</th><th width="70%">代表性模型 · 接入</th></tr>
@@ -89,6 +90,7 @@
 </tr>
 </tbody>
 </table>
+<!-- providers:end -->
 
 ## 证据图片
 
@@ -122,10 +124,12 @@ providers/<provider-slug>/
 
 ```bash
 cp -R providers/_template providers/<provider-slug>
+# 改 providers/<provider-slug>/provider.yaml，并填写固定文档
+cd tools/catalog && go run . && cd ../..   # 生成两份首页的供应商表
 ./scripts/validate-layout.sh
 ```
 
-然后填写固定文档，并在上方供应商表增加一行。来源、核验日期和状态必须可追溯。
+供应商表由 `provider.yaml` 生成，不要手改。来源、核验日期和状态必须可追溯。
 
 ## 文档
 

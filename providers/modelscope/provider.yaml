@@ -1,0 +1,47 @@
+slug: modelscope
+name: ModelScope
+verified_at: "2026-08-27"
+base_url: https://api-inference.modelscope.cn/v1
+# 入口采用 OpenAI Chat Completions 风格，完整兼容性待核验
+openai_compatible: unverified
+anthropic_endpoint: null
+free:
+  type: unknown
+  note: 免费模型与限流待官方复核
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: null
+sources:
+  - {label: 官网, url: "https://modelscope.cn/"}
+  - {label: 模型列表, url: "https://modelscope.cn/models"}
+  - {label: 文档, url: "https://modelscope.cn/docs"}
+  - {label: 访问令牌, url: "https://modelscope.cn/my/myaccesstoken"}
+home:
+  order: 90
+  pages: [readme, readme-b]
+  tags: [文本生成]
+  pending_tags: []
+  status: pending
+  status_note: null
+  signup: {label: 注册, url: "https://modelscope.cn/"}
+  extras: []
+models:
+  - id: MiniMax/MiniMax-M2.5
+    capabilities: [文本生成]
+    context: 204K
+    note: 免费状态与限流待核验
+    home: {pages: [readme, readme-b]}
+  - id: qwen-qwen3-5-35b-a3b
+    capabilities: [文本生成]
+    context: 131K
+    rpd: 2000
+    note: 2,000 RPD 为总量
+    home: {pages: [readme, readme-b]}
+  - id: qwen-qwen3-5-27b
+    capabilities: [文本生成]
+    context: 131K
+    rpd: 2000
+    note: 2,000 RPD 为总量
+    home: {pages: [readme]}

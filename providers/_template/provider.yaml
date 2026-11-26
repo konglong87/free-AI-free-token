@@ -1,0 +1,37 @@
+# 供应商数据的唯一来源。改完后运行：
+#   cd tools/catalog && go run .          # 重新生成 README.md / readme-B.md 的供应商表
+#   ./scripts/validate-layout.sh          # 校验
+# 查不到的写 null 或「待核验」，不要猜测。
+slug: _template                # 必须与目录名一致，小写 kebab-case
+name: 模板                     # 首页显示名
+verified_at: null              # YYYY-MM-DD，最后核验日期
+base_url: null                 # API 接入地址
+openai_compatible: unverified  # supported | unverified | unsupported
+anthropic_endpoint: null       # Anthropic Messages 接入地址；没有写 null
+free:
+  type: unknown                # permanent | daily | one_time | promo | unknown
+  note: null                   # 免费条件的一句话说明
+requirements:                  # 使用门槛
+  credit_card: unknown         # required | none | unknown
+  real_name: unknown
+  region: unknown
+  other: null
+sources: []                    # 官方来源：- {label: 官网, url: "https://..."}
+home:
+  order: 999                   # 首页排序，越小越靠前，不可重复
+  pages: [readme, readme-b]    # 出现在哪些首页；模板行只在 README.md 渲染
+  tags: []                     # 能力标签，必须来自 docs/model-capabilities.md 的统一标签
+  pending_tags: []             # tags 里需要标「待核验」的子集
+  status: pending              # ok（✅）| pending（🟡）
+  status_note: null            # 状态图标后的说明
+  signup: {label: 注册, url: null}   # 注册 / 领取入口 / 申请入口
+  extras: []                   # 额外证据链接：- {label: 官方定价, url: "https://...", pages: [readme]}
+models: []
+# 模型示例（同一家里 id 不可重复；首页按列表顺序展示，相邻且能力相同的合并成一组）：
+#  - id: example-model
+#    capabilities: [文本生成]      # 统一标签
+#    pending_capabilities: []      # 需标「待核验」的能力
+#    context: 128K                 # 可选，原样记录资料库写法
+#    rpm: null                     # 可选：rpm / rpd / tpm / tpd
+#    note: null
+#    home: {pages: [readme, readme-b]}   # 省略则不上首页

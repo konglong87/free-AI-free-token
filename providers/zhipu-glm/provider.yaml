@@ -1,0 +1,52 @@
+slug: zhipu-glm
+name: 智谱 GLM
+verified_at: "2026-06-25"
+base_url: https://open.bigmodel.cn/api/paas/v4/
+openai_compatible: supported
+anthropic_endpoint: null
+free:
+  type: unknown
+  note: 官方模型概览列出多个 Flash 免费模型；价格页部分模型标注限时免费
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: null
+sources:
+  - {label: 官网, url: "https://bigmodel.cn/"}
+  - {label: 模型概览, url: "https://docs.bigmodel.cn/cn/guide/start/model-overview"}
+  - {label: 价格页, url: "https://bigmodel.cn/pricing"}
+  - {label: OpenAI API 兼容, url: "https://docs.bigmodel.cn/cn/guide/develop/openai"}
+home:
+  order: 20
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解, 文生图, 视频生成]
+  pending_tags: []
+  status: ok
+  status_note: null
+  signup: {label: 注册, url: "https://bigmodel.cn/"}
+  # readme-B.md 现有 API 链接不带末尾斜杠，README.md 带；此处原样保留，待统一
+  page_api_url: {readme-b: "https://open.bigmodel.cn/api/paas/v4"}
+  extras: []
+models:
+  - id: glm-4.7-flash
+    capabilities: [文本生成]
+    home: {pages: [readme, readme-b]}
+  - id: glm-4-flash-250414
+    capabilities: [文本生成]
+    home: {pages: [readme]}
+  - id: glm-4.6v-flash
+    capabilities: [图片理解]
+    home: {pages: [readme, readme-b]}
+  - id: glm-4.1v-thinking-flash
+    capabilities: [图片理解]
+    home: {pages: [readme]}
+  - id: glm-4v-flash
+    capabilities: [图片理解]
+    home: {pages: [readme]}
+  - id: cogview-3-flash
+    capabilities: [文生图]
+    home: {pages: [readme, readme-b]}
+  - id: cogvideox-flash
+    capabilities: [视频生成]
+    home: {pages: [readme, readme-b]}

@@ -1,0 +1,53 @@
+slug: agnes
+name: Agnes AI
+verified_at: "2026-10-20"
+base_url: https://apihub.agnes-ai.com/v1
+openai_compatible: supported
+# 仅 agnes-3.0-flash 在模型页列出 /v1/messages 接口
+anthropic_endpoint: https://apihub.agnes-ai.com/v1/messages
+free:
+  type: unknown
+  note: 官方定价页显示图片模型当前免费、视频模型当前限时免费；以官方定价页和账户账单为准
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: null
+sources:
+  - {label: 官网, url: "https://agnes-ai.com/"}
+  - {label: API 文档, url: "https://agnes-ai.com/doc"}
+  - {label: 模型定价, url: "https://www.agnes-ai.com/zh-Hans/docs/pricing"}
+home:
+  order: 10
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解, 文生图, 图生图, 文生视频, 图生视频]
+  pending_tags: []
+  status: ok
+  status_note: null
+  signup: {label: 注册, url: "https://agnes-ai.com/"}
+  extras:
+    - {label: 官方定价, url: "https://www.agnes-ai.com/zh-Hans/docs/pricing"}
+    - {label: 模型截图, url: providers/agnes/assets/agnes-free-models.png, pages: [readme]}
+models:
+  - id: agnes-3.0-flash
+    capabilities: [文本生成, 图片理解]
+    context: 512K
+    home: {pages: [readme, readme-b]}
+  - id: agnes-2.5-flash
+    capabilities: [文本生成]
+    home: {pages: [readme]}
+  - id: agnes-image-2.5-flash
+    capabilities: [文生图, 图生图]
+    home: {pages: [readme, readme-b]}
+  - id: agnes-image-2.1-flash
+    capabilities: [文生图, 图像编辑]
+    home: {pages: [readme]}
+  - id: agnes-video-2.5-flash
+    capabilities: [文生视频, 图生视频]
+    home: {pages: [readme, readme-b]}
+  - id: agnes-2.0-flash
+    capabilities: [文本生成]
+  - id: agnes-image-2.0-flash
+    capabilities: [文生图, 图像编辑]
+  - id: agnes-video-v2.0
+    capabilities: [视频生成]

@@ -20,9 +20,13 @@
 - 后续可以自动生成网站、表格、搜索索引。
 - 每个供应商都能独立 review、更新、删除。
 
-### Markdown 作为唯一资料载体
+### Markdown 与 provider.yaml
 
-本仓库优先做免费供应商资料收集。所有信息都写在 Markdown 中，方便直接阅读和 review。
+本仓库优先做免费供应商资料收集。说明性内容写在 Markdown 中，方便直接阅读和 review。
+
+每个供应商目录里的 `provider.yaml` 是结构化数据的唯一来源：名称、首页排序、能力标签、代表模型、链接、状态，以及 base URL、兼容性、免费类型、使用门槛、核验日期和官方来源。`tools/catalog`（Go，自带 `go.mod`）读取所有 `provider.yaml`，做 schema 校验，并生成 `README.md` 与 `readme-B.md` 里标记注释之间的供应商表和数量。
+
+新增或修改供应商的流程：改 yaml → 运行生成（`cd tools/catalog && go run .`）→ 运行校验（`./scripts/validate-layout.sh`，装有 go 时会运行 `go run . -check`，首页与 yaml 不一致就失败）。
 
 ### 只保留公开可接入信息
 

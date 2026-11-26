@@ -2,6 +2,7 @@
 set -euo pipefail
 
 required_files=(
+  "provider.yaml"
   "README.md"
   "official-links.md"
   "models.md"
@@ -37,6 +38,12 @@ done
 
 if [[ "$failed" -ne 0 ]]; then
   exit 1
+fi
+
+if command -v go >/dev/null 2>&1; then
+  (cd "$root/tools/catalog" && go run . -check)
+else
+  echo "未安装 go，跳过 provider.yaml 校验与首页一致性检查（tools/catalog -check）" >&2
 fi
 
 echo "Provider layout OK"

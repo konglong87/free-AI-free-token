@@ -1,0 +1,41 @@
+slug: ai21-labs
+name: AI21 Labs
+verified_at: "2026-08-27"
+base_url: https://api.ai21.com/studio/v1
+openai_compatible: unverified
+anthropic_endpoint: null
+free:
+  type: unknown
+  note: 当前确认 2 个免费模型，待官方复核
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: null
+sources:
+  - {label: 官网, url: "https://www.ai21.com/"}
+  - {label: Studio 控制台, url: "https://studio.ai21.com/"}
+  - {label: 文档, url: "https://docs.ai21.com/"}
+  - {label: Jamba 模型文档, url: "https://docs.ai21.com/reference/jamba-models"}
+home:
+  order: 110
+  pages: [readme, readme-b]
+  tags: [文本生成]
+  pending_tags: []
+  status: pending
+  status_note: null
+  signup: {label: 注册, url: "https://studio.ai21.com/"}
+  extras: []
+models:
+  - id: jamba-large-1-7
+    capabilities: [文本生成]
+    context: 256K
+    rpm: 200
+    note: 另标注 10 RPS
+    home: {pages: [readme, readme-b]}
+  - id: jamba-mini-2
+    capabilities: [文本生成]
+    context: 256K
+    rpm: 200
+    note: 另标注 10 RPS
+    home: {pages: [readme, readme-b]}

@@ -1,0 +1,36 @@
+slug: iflytek-spark
+name: 科大讯飞星火
+verified_at: "2026-10-29"
+base_url: https://maas-api.cn-huabei-1.xf-yun.com/v2
+openai_compatible: supported
+anthropic_endpoint: https://maas-api.cn-huabei-1.xf-yun.com/anthropic
+free:
+  type: one_time
+  note: 首页标注 10 亿 tokens 免费额度，限时赠额、非永久免费；领取资格、有效期以登录后的活动规则为准
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: 领取跳转登录，公开页面未展示完整条款
+sources:
+  - {label: 讯飞星辰 MaaS 首页, url: "https://maas.xfyun.cn/"}
+  - {label: 星火模型产品页, url: "https://xinghuo.xfyun.cn/sparkapi"}
+  - {label: Spark-X2.6 模型介绍, url: "https://maas.xfyun.cn/doc/guide/2%E3%80%81%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/2.1.1%20Spark-X2.6.html"}
+  - {label: MaaS API 接入, url: "https://maas.xfyun.cn/doc/guide/1%E3%80%81%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/1.1%20API%E6%8E%A5%E5%85%A5.html"}
+home:
+  order: 40
+  pages: [readme, readme-b]
+  tags: [文本生成]
+  pending_tags: []
+  status: pending
+  status_note: 官方活动与接口已核对，领取条件 / 调用待实测
+  signup: {label: 领取入口, url: "https://maas.xfyun.cn/"}
+  extras:
+    - {label: 官方来源, url: providers/iflytek-spark/official-links.md}
+models:
+  - id: spark-x2.6
+    capabilities: [文本生成]
+    context: 1M
+    tpm: 1000000
+    note: 官方速率限制文档默认并发 20、TPM 100 万，按 API Key + 模型分别计
+    home: {pages: [readme, readme-b], group_note: 10 亿 Token 限时赠额}

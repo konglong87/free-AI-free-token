@@ -1,0 +1,40 @@
+slug: b-ai
+name: B.AI
+verified_at: "2026-08-24"
+base_url: https://api.b.ai/v1
+# 仅确认调用示例采用 OpenAI Chat Completions 风格，完整兼容性待核验
+openai_compatible: unverified
+anthropic_endpoint: null
+free:
+  type: unknown
+  note: key 页面截图中标记为「赠送」的模型
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: null
+sources:
+  - {label: 官网, url: "https://chat.b.ai/"}
+  - {label: API key 页面, url: "https://chat.b.ai/key"}
+home:
+  order: 70
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解]
+  pending_tags: [图片理解]
+  status: ok
+  status_note: null
+  signup: {label: 注册, url: "https://chat.b.ai/"}
+  extras:
+    - {label: 模型截图, url: providers/b-ai/assets/b-ai-free-models.png}
+models:
+  - id: DeepSeek-V4-Flash
+    capabilities: [文本生成]
+    home: {pages: [readme, readme-b]}
+  - id: Hy3
+    capabilities: [文本生成]
+    home: {pages: [readme, readme-b]}
+  - id: DeepSeek-V4-Flash-Vision-Exp
+    capabilities: [文本生成, 图片理解]
+    pending_capabilities: [图片理解]
+    note: 视觉能力待实测
+    home: {pages: [readme, readme-b]}
