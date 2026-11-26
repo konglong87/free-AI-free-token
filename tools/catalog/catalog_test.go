@@ -89,6 +89,7 @@ func TestValidateErrors(t *testing.T) {
 		{"模型能力非统一标签", "capabilities: [文生图]", "capabilities: [绘画]", "非统一标签"},
 		{"待核验必须是子集", "pending_tags: [图片理解]", "pending_tags: [文生图]", "pending_tags"},
 		{"模型 ID 重复", "id: hidden", "id: m1", "重复"},
+		{"anthropic 端点带 /messages", "anthropic_endpoint: null", "anthropic_endpoint: https://api.demo.test/v1/messages", "ANTHROPIC_BASE_URL"},
 		{"状态枚举", "status: pending", "status: done", "home.status"},
 		{"未知首页", "pages: [readme, readme-b]\n  tags", "pages: [readme, readme-c]\n  tags", "未知首页"},
 		{"额外链接不是链接", `url: "https://demo.test/pricing"`, "url: ftp://x", "http(s)"},

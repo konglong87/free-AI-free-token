@@ -7,7 +7,7 @@ name: 模板                     # 首页显示名
 verified_at: null              # YYYY-MM-DD，最后核验日期
 base_url: null                 # API 接入地址
 openai_compatible: unverified  # supported | unverified | unsupported
-anthropic_endpoint: null       # Anthropic Messages 接入地址；没有写 null
+anthropic_endpoint: null       # 填进 ANTHROPIC_BASE_URL 的地址（SDK 会自己拼 /v1/messages，不要带 /messages）；没有写 null
 free:
   type: unknown                # permanent | daily | one_time | promo | unknown
   note: null                   # 免费条件的一句话说明

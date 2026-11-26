@@ -3,8 +3,8 @@ name: Agnes AI
 verified_at: "2026-10-20"
 base_url: https://apihub.agnes-ai.com/v1
 openai_compatible: supported
-# 仅 agnes-3.0-flash 在模型页列出 /v1/messages 接口
-anthropic_endpoint: https://apihub.agnes-ai.com/v1/messages
+# 由模型页列出的 /v1/messages 推得，待实测（仅 agnes-3.0-flash 列出该接口）
+anthropic_endpoint: https://apihub.agnes-ai.com
 free:
   type: unknown
   note: 官方定价页显示图片模型当前免费、视频模型当前限时免费；以官方定价页和账户账单为准

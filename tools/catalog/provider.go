@@ -227,6 +227,9 @@ func Validate(p Provider, caps Capabilities, root string) []string {
 	if p.AnthropicEndpoint != "" && !isHTTP(p.AnthropicEndpoint) {
 		add("anthropic_endpoint=%q 必须是 http(s) 链接", p.AnthropicEndpoint)
 	}
+	if strings.HasSuffix(strings.TrimRight(p.AnthropicEndpoint, "/"), "/messages") {
+		add("anthropic_endpoint=%q 应是 ANTHROPIC_BASE_URL，不要以 /messages 结尾", p.AnthropicEndpoint)
+	}
 	oneOf("free.type", p.Free.Type, freeTypes)
 	oneOf("requirements.credit_card", p.Requirements.CreditCard, reqValues)
 	oneOf("requirements.real_name", p.Requirements.RealName, reqValues)
