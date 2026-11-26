@@ -1,0 +1,74 @@
+slug: siliconflow
+name: 硅基流动（国内站）
+verified_at: "2026-11-26"
+base_url: https://api.siliconflow.cn/v1
+openai_compatible: supported
+# 官方 Messages 端点为 https://api.siliconflow.cn/v1/messages；Claude Code 官方页的 ANTHROPIC_BASE_URL 写 https://api.siliconflow.cn/
+anthropic_endpoint: https://api.siliconflow.cn
+free:
+  type: permanent
+  note: 价格页标「免费」的小模型调用费用为 0，限速免费；官方保留解释权，模型可能随时下线。国际站 siliconflow.com 未见免费模型，不收录
+requirements:
+  credit_card: none
+  real_name: required
+  region: unknown
+  other: 2026-05-15 起未实名认证账户无法使用平台功能（支付宝人脸识别）；免费模型具体 RPM / TPM 需登录模型详情页查看
+sources:
+  - {label: 价格页, url: "https://www.siliconflow.cn/pricing"}
+  - {label: 公开模型中心, url: "https://www.siliconflow.cn/models"}
+  - {label: Rate Limits, url: "https://docs.siliconflow.cn/docs/userguide/faqs/rate-limit-and-upgradation"}
+  - {label: 实名认证 FAQ, url: "https://docs.siliconflow.cn/docs/userguide/faqs/authentication"}
+  - {label: 更新公告, url: "https://docs.siliconflow.cn/docs/release-notes/overview"}
+  - {label: Messages API, url: "https://docs.siliconflow.cn/docs/api/messages-post"}
+home:
+  order: 130
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解]
+  pending_tags: []
+  status: pending
+  status_note: 官方页面已核对，免费模型 ID 与限速待登录实测
+  signup: {label: 注册, url: "https://cloud.siliconflow.cn"}
+  extras:
+    - {label: 价格页（免费标记）, url: "https://www.siliconflow.cn/pricing"}
+    - {label: 官方来源, url: providers/siliconflow/official-links.md}
+models:
+  - id: Qwen/Qwen3-8B
+    capabilities: [文本生成]
+    context: 128K
+    note: 官方标注工具调用；限速需登录查看
+    home: {pages: [readme, readme-b], group_note: 永久免费，需实名认证}
+  - id: THUDM/GLM-Z1-9B-0414
+    capabilities: [文本生成]
+    context: 128K
+    note: 官方标注工具调用
+    home: {pages: [readme]}
+  - id: Qwen/Qwen3.5-4B
+    capabilities: [文本生成, 图片理解]
+    context: 256K
+    note: 官方标注视觉输入、工具调用
+    home: {pages: [readme, readme-b]}
+  - id: deepseek-ai/DeepSeek-OCR
+    capabilities: [图片理解]
+    context: 8K
+    note: OCR 模型，不等于通用看图问答
+    home: {pages: [readme]}
+  - id: deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
+    capabilities: [文本生成]
+    context: 128K
+  - id: Qwen/Qwen2.5-7B-Instruct
+    capabilities: [文本生成]
+    context: 32K
+  - id: THUDM/GLM-4-9B-0414
+    capabilities: [文本生成]
+    context: 32K
+  - id: tencent/Hunyuan-MT-7B
+    capabilities: [文本生成]
+    context: 32K
+    note: 翻译模型
+  - id: PaddlePaddle/PaddleOCR-VL-1.5
+    capabilities: [图片理解]
+    note: OCR 模型
+  - id: XingChenAGI/Xing4.0-29B
+    capabilities: [文本生成]
+    context: 256K
+    note: 官方公告 2026-12-04 下线
