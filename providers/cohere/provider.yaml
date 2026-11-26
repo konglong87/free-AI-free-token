@@ -1,0 +1,66 @@
+slug: cohere
+name: Cohere
+verified_at: "2026-11-26"
+base_url: https://api.cohere.ai/compatibility/v1
+openai_compatible: supported
+anthropic_endpoint: null
+free:
+  type: permanent
+  note: Trial key 永久免费，每月最多 1,000 次调用，Chat 每模型 20 请求 / 分钟；定价页 FAQ 写明 Trial key 不得用于生产或商业用途
+requirements:
+  credit_card: unknown
+  real_name: unknown
+  region: unknown
+  other: 需注册 Cohere 账号；个人账号只能用 Trial key
+sources:
+  - {label: 限流, url: "https://docs.cohere.com/docs/rate-limits"}
+  - {label: 定价说明, url: "https://docs.cohere.com/v2/docs/how-does-cohere-pricing-work"}
+  - {label: 定价页与 FAQ, url: "https://cohere.com/pricing"}
+  - {label: 模型列表, url: "https://docs.cohere.com/docs/models"}
+  - {label: OpenAI 兼容 API, url: "https://docs.cohere.com/docs/compatibility-api"}
+home:
+  order: 170
+  pages: [readme, readme-b]
+  tags: [文本生成, 图片理解]
+  pending_tags: []
+  status: pending
+  status_note: 官方文档已核对，注册与调用待实测；Trial key 不得商用
+  signup: {label: 注册, url: "https://dashboard.cohere.com/api-keys"}
+  extras:
+    - {label: 限流说明, url: "https://docs.cohere.com/docs/rate-limits"}
+    - {label: 官方来源, url: providers/cohere/official-links.md}
+models:
+  - id: command-a-03-2025
+    capabilities: [文本生成]
+    context: 256K
+    note: 最大输出 8k
+    home: {pages: [readme, readme-b], group_note: "Trial key 每月 1,000 次，不得商用"}
+  - id: command-a-reasoning-08-2025
+    capabilities: [文本生成]
+    context: 256K
+    home: {pages: [readme]}
+  - id: north-mini-code-1.0
+    capabilities: [文本生成]
+    context: 256K
+    note: 官方称为 agentic coding 训练
+    home: {pages: [readme]}
+  - id: command-a-vision-07-2025
+    capabilities: [文本生成, 图片理解]
+    context: 128K
+    home: {pages: [readme, readme-b]}
+  - id: command-a-plus-05-2026
+    capabilities: [文本生成, 图片理解]
+    context: 128K
+  - id: command-a-translate-08-2025
+    capabilities: [文本生成]
+    context: 8K
+    note: 翻译模型
+  - id: command-r7b-12-2024
+    capabilities: [文本生成]
+    context: 128K
+  - id: command-r-08-2024
+    capabilities: [文本生成]
+    context: 128K
+  - id: command-r-plus-08-2024
+    capabilities: [文本生成]
+    context: 128K
