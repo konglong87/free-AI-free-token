@@ -203,7 +203,7 @@ func TestRenderRowPerPage(t *testing.T) {
 	}
 }
 
-func TestRenderTableOrderAndTemplate(t *testing.T) {
+func TestRenderTableOrderWithoutTemplate(t *testing.T) {
 	a := mustParse(t, validYAML)
 	b := mustParse(t, validYAML)
 	b.Slug, b.Name, b.Home.Order = "second", "Second", 0
@@ -214,11 +214,13 @@ func TestRenderTableOrderAndTemplate(t *testing.T) {
 
 	readme := RenderTable(all, testCaps, "readme")
 	if !(strings.Index(readme, "providers/demo/") < strings.Index(readme, "providers/second/") &&
-		strings.Index(readme, "providers/second/") < strings.Index(readme, "providers/_template/")) {
-		t.Fatal("README 的行应按 home.order 排序且模板在最后")
+		strings.Index(readme, "providers/second/") > 0) {
+		t.Fatal("README 的行应按 home.order 排序")
 	}
-	if strings.Contains(RenderTable(all, testCaps, "readme-b"), "_template") {
-		t.Fatal("模板行只应出现在 README")
+	for _, page := range []string{"readme", "readme-b"} {
+		if strings.Contains(RenderTable(all, testCaps, page), "_template") {
+			t.Fatalf("%s 不应渲染模板行", page)
+		}
 	}
 	if _, n := ProvidersOn(all, "readme"); n != 2 {
 		t.Fatalf("数量不应包含模板，得到 %d", n)
@@ -228,25 +230,50 @@ func TestRenderTableOrderAndTemplate(t *testing.T) {
 func TestSplice(t *testing.T) {
 	doc := "head\n<!-- providers-count:start --><img src=\"x/badge/providers-3-blue\"><!-- providers-count:end -->\n" +
 		"<td><strong><!-- providers-count:start -->3<!-- providers-count:end --></strong></td>\n" +
+		"<!-- updated:start --><img src=\"x/badge/updated-2026--01--02-x\"><!-- updated:end --> <b><!-- updated:start -->2026-01-02<!-- updated:end --></b>\n" +
 		"<!-- providers:start -->\nOLD\n<!-- providers:end -->\ntail\n"
-	got, err := Splice(doc, "NEW", 7)
+	got, err := Splice(doc, "NEW", 7, "2026-11-26")
 	if err != nil {
 		t.Fatal(err)
 	}
 	want := "head\n<!-- providers-count:start --><img src=\"x/badge/providers-7-blue\"><!-- providers-count:end -->\n" +
 		"<td><strong><!-- providers-count:start -->7<!-- providers-count:end --></strong></td>\n" +
+		"<!-- updated:start --><img src=\"x/badge/updated-2026--11--26-x\"><!-- updated:end --> <b><!-- updated:start -->2026-11-26<!-- updated:end --></b>\n" +
 		"<!-- providers:start -->\nNEW\n<!-- providers:end -->\ntail\n"
 	if got != want {
 		t.Fatalf("Splice 结果不对:\n%s", got)
 	}
-	again, _ := Splice(got, "NEW", 7)
+	again, _ := Splice(got, "NEW", 7, "2026-11-26")
 	if again != got {
 		t.Fatal("Splice 应幂等")
 	}
 	for _, bad := range []string{"no markers", "<!-- providers:end -->\n<!-- providers:start -->", "<!-- providers:start -->\n<!-- providers:start -->\n<!-- providers:end -->"} {
-		if _, err := Splice(bad, "x", 1); err == nil {
+		if _, err := Splice(bad, "x", 1, ""); err == nil {
 			t.Errorf("标记不合法应报错: %q", bad)
 		}
+	}
+}
+
+func TestAccessSummary(t *testing.T) {
+	p := mustParse(t, validYAML)
+	if got := accessSummary(p); got != "" {
+		t.Fatalf("全部 unknown 时不应显示，得到 %q", got)
+	}
+	p.Free.Type = "one_time"
+	p.Requirements.CreditCard, p.Requirements.RealName = "required", "none"
+	want := "<br><br><sub>免费方式：一次性赠金<br>门槛：需绑卡 · 无需实名</sub>"
+	if got := accessSummary(p); got != want {
+		t.Fatalf("accessSummary = %q，想要 %q", got, want)
+	}
+	if !strings.Contains(renderRow(p, testCaps, "readme"), "（待核验）</sub>"+want+"</td>") {
+		t.Fatal("免费方式与门槛应紧跟在左列能力标签之后")
+	}
+}
+
+func TestLatestVerified(t *testing.T) {
+	ps := []Provider{{Slug: "a", VerifiedAt: "2026-08-27"}, {Slug: "b", VerifiedAt: "2026-11-26"}, {Slug: "c"}, {Slug: templateSlug, VerifiedAt: "2099-01-01"}}
+	if got := LatestVerified(ps); got != "2026-11-26" {
+		t.Fatalf("LatestVerified = %q", got)
 	}
 }
 

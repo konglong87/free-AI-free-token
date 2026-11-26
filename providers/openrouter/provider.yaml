@@ -18,7 +18,7 @@ sources:
   - {label: 免费模型筛选, url: "https://openrouter.ai/models?max_price=0"}
   - {label: 模型接口, url: "https://openrouter.ai/api/v1/models"}
 home:
-  order: 60
+  order: 90
   pages: [readme, readme-b]
   tags: [文本生成]
   pending_tags: []

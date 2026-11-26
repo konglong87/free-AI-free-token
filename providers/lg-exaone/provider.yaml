@@ -18,7 +18,7 @@ sources:
   - {label: K-EXAONE 2.5 接口说明, url: "https://docs.exaone.ai/ko/docs/k-exaone-2.5"}
   - {label: 服务条款, url: "https://docs.exaone.ai/ko/terms/terms-of-service"}
 home:
-  order: 50
+  order: 80
   pages: [readme, readme-b]
   tags: [文本生成]
   pending_tags: []

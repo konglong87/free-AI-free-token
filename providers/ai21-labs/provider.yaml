@@ -18,7 +18,7 @@ sources:
   - {label: 文档, url: "https://docs.ai21.com/"}
   - {label: Jamba 模型文档, url: "https://docs.ai21.com/reference/jamba-models"}
 home:
-  order: 110
+  order: 130
   pages: [readme, readme-b]
   tags: [文本生成]
   pending_tags: []

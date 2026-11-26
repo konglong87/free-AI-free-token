@@ -18,7 +18,7 @@ sources:
   - {label: 文档, url: "https://console.groq.com/docs"}
   - {label: 模型文档, url: "https://console.groq.com/docs/models"}
 home:
-  order: 100
+  order: 120
   pages: [readme, readme-b]
   tags: [文本生成]
   pending_tags: []

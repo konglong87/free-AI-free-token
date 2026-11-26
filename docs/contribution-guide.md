@@ -27,7 +27,8 @@ cd tools/catalog && go run .   # 重新生成 README.md / readme-B.md 的供应�
 字段说明见 `providers/_template/provider.yaml`。要点：
 
 - 数据只来自该供应商的官方来源或本目录已有资料；查不到的写 `null` 或「待核验」，不要猜测。
-- `home.tags`、模型的 `capabilities` 必须使用[统一能力标签](model-capabilities.md)；`home.order` 决定首页顺序，不可重复。
+- `home.tags`、模型的 `capabilities` 必须使用[统一能力标签](model-capabilities.md)；`home.order` 决定首页顺序，不可重复；国内供应商排在前面。
+- `free.type`、`requirements` 核验后会显示在首页左列的「免费方式」「门槛」里；查不到就保持 `unknown`，首页不显示。
 - 模型按列表顺序展示，`home.pages` 决定出现在哪份首页；相邻且能力相同的模型会合并成一组。
 - 生成器会校验必填字段、枚举值、能力标签、slug 与目录名一致、同一家里模型 ID 不重复。
 

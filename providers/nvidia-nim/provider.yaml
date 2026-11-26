@@ -19,7 +19,7 @@ sources:
   - {label: API key 页面, url: "https://build.nvidia.com/settings/api-keys"}
   - {label: NIM 文档, url: "https://docs.nvidia.com/nim/"}
 home:
-  order: 80
+  order: 110
   pages: [readme, readme-b]
   tags: [文本生成]
   pending_tags: []

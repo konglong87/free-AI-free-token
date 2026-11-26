@@ -18,7 +18,7 @@ sources:
   - {label: API 文档, url: "https://agnes-ai.com/doc"}
   - {label: 模型定价, url: "https://www.agnes-ai.com/zh-Hans/docs/pricing"}
 home:
-  order: 10
+  order: 70
   pages: [readme, readme-b]
   tags: [文本生成, 图片理解, 文生图, 图生图, 文生视频, 图生视频]
   pending_tags: []

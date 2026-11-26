@@ -17,7 +17,7 @@ sources:
   - {label: 官网, url: "https://chat.b.ai/"}
   - {label: API key 页面, url: "https://chat.b.ai/key"}
 home:
-  order: 70
+  order: 100
   pages: [readme, readme-b]
   tags: [文本生成, 图片理解]
   pending_tags: [图片理解]

@@ -21,7 +21,7 @@ sources:
   - {label: Base URL 及鉴权, url: "https://docs.volcengine.com/docs/ark/base-url-and-authentication?lang=zh"}
   - {label: Messages API, url: "https://docs.volcengine.com/docs/ark/messages-api?lang=zh"}
 home:
-  order: 120
+  order: 40
   pages: [readme, readme-b]
   tags: [文本生成, 图片理解]
   pending_tags: [图片理解]

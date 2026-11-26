@@ -18,7 +18,7 @@ sources:
   - {label: 价格页, url: "https://bigmodel.cn/pricing"}
   - {label: OpenAI API 兼容, url: "https://docs.bigmodel.cn/cn/guide/develop/openai"}
 home:
-  order: 20
+  order: 10
   pages: [readme, readme-b]
   tags: [文本生成, 图片理解, 文生图, 视频生成]
   pending_tags: []

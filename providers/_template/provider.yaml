@@ -19,7 +19,7 @@ requirements:                  # 使用门槛
 sources: []                    # 官方来源：- {label: 官网, url: "https://..."}
 home:
   order: 999                   # 首页排序，越小越靠前，不可重复
-  pages: [readme, readme-b]    # 出现在哪些首页；模板行只在 README.md 渲染
+  pages: [readme, readme-b]    # 出现在哪些首页；模板本身不会出现在首页
   tags: []                     # 能力标签，必须来自 docs/model-capabilities.md 的统一标签
   pending_tags: []             # tags 里需要标「待核验」的子集
   status: pending              # ok（✅）| pending（🟡）

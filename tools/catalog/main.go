@@ -57,7 +57,7 @@ func run(root string, check bool) int {
 			fatal(err)
 		}
 		_, count := ProvidersOn(providers, page)
-		next, err := Splice(string(old), RenderTable(providers, caps, page), count)
+		next, err := Splice(string(old), RenderTable(providers, caps, page), count, LatestVerified(providers))
 		if err != nil {
 			fatal(fmt.Errorf("%s: %w", name, err))
 		}

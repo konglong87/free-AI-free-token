@@ -19,7 +19,7 @@ sources:
   - {label: 文档, url: "https://modelscope.cn/docs"}
   - {label: 访问令牌, url: "https://modelscope.cn/my/myaccesstoken"}
 home:
-  order: 90
+  order: 60
   pages: [readme, readme-b]
   tags: [文本生成]
   pending_tags: []
