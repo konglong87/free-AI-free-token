@@ -2,6 +2,8 @@
 //
 //	go run .          生成并写回两份首页
 //	go run . -check   只检查：校验失败或生成结果与已提交内容不一致时以非零状态退出
+//	go run . smoke    用环境变量里的 key 实测各家 /models 与 chat（-write 回写 verified_at）
+//	go run . stale    列出 verified_at 为空或过期的供应商（Markdown）
 package main
 
 import (
@@ -12,17 +14,23 @@ import (
 )
 
 func main() {
+	if len(os.Args) > 1 {
+		switch os.Args[1] {
+		case "smoke":
+			os.Exit(smokeCommand(os.Args[2:]))
+		case "stale":
+			os.Exit(staleCommand(os.Args[2:]))
+		}
+	}
 	root := flag.String("root", "", "仓库根目录（默认从当前目录向上查找）")
 	check := flag.Bool("check", false, "只检查，不写文件")
 	flag.Parse()
 
-	if *root == "" {
-		r, err := findRoot()
-		if err != nil {
-			fatal(err)
-		}
-		*root = r
+	r, err := resolveRoot(*root)
+	if err != nil {
+		fatal(err)
 	}
+	*root = r
 	if code := run(*root, *check); code != 0 {
 		os.Exit(code)
 	}
@@ -73,6 +81,13 @@ func run(root string, check bool) int {
 		fmt.Println("catalog OK")
 	}
 	return 0
+}
+
+func resolveRoot(root string) (string, error) {
+	if root != "" {
+		return root, nil
+	}
+	return findRoot()
 }
 
 func findRoot() (string, error) {

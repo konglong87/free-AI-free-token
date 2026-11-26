@@ -34,4 +34,5 @@ models: []
 #    context: 128K                 # 可选，原样记录资料库写法
 #    rpm: null                     # 可选：rpm / rpd / tpm / tpd
 #    note: null
+#    smoke: true                   # 可选：实测（catalog smoke）用它发 chat；每家最多一个，须为文本生成模型；省略则取第一个上首页的文本模型
 #    home: {pages: [readme, readme-b]}   # 省略则不上首页

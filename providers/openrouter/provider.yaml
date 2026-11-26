@@ -47,6 +47,7 @@ models:
   - id: meta-llama/llama-3.3-70b-instruct:free
     capabilities: [文本生成]
     context: "131072"
+    smoke: true
   - id: meta-llama/llama-3.2-3b-instruct:free
     capabilities: [文本生成]
     context: "131072"

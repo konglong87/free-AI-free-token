@@ -31,6 +31,64 @@ cd tools/catalog && go run .   # 重新生成 README.md / readme-B.md 的供应�
 - 模型按列表顺序展示，`home.pages` 决定出现在哪份首页；相邻且能力相同的模型会合并成一组。
 - 生成器会校验必填字段、枚举值、能力标签、slug 与目录名一致、同一家里模型 ID 不重复。
 
+## 实测
+
+`tools/catalog` 提供两个子命令，用来给 `verified_at` 提供依据、并发现过期条目：
+
+```bash
+cd tools/catalog
+go run . smoke                       # 实测所有设置了 key 的供应商
+go run . smoke -provider nvidia-nim  # 只测一家
+go run . smoke -write                # 两项都成功才把该家 verified_at 改成今天
+go run . stale                       # 列出 verified_at 为空或超过 45 天的供应商（Markdown）
+go run . stale -days 30              # 自定义天数
+```
+
+**`smoke` 做什么**：对每家先 `GET {base_url}/models`，再用一个模型发一次 `max_tokens: 1` 的 chat completion，每个请求只发一次、不重试，默认超时 20 秒（`-timeout` 可调）。输出一张表：供应商、`/models` 与 chat 的状态码、耗时、简短错误信息。没有 key 的供应商直接跳过；一个 key 都没有时输出「全部跳过」。任何一家失败，命令以非零状态退出。
+
+**key 怎么给**：只通过环境变量，变量名是供应商 slug 转大写、`-` 换成 `_`，再加 `_API_KEY`，例如 `nvidia-nim` → `NVIDIA_NIM_API_KEY`，`b-ai` → `B_AI_API_KEY`。
+
+```bash
+NVIDIA_NIM_API_KEY=你的key go run . smoke -provider nvidia-nim
+```
+
+key 不要写进仓库或脚本；输出里出现的 key 会被替换成 `***`。
+
+**用哪个模型**：默认取 `models[]` 里第一个上首页的「文本生成」模型。想指定别的，在该模型上加 `smoke: true`（每家最多一个，且必须是文本生成模型）。ID 含 `*` 的条目（如 `*:free`）是模型集合，不会被选作实测模型。
+
+**`-write` 的边界**：只有 `/models` 和 chat 都返回 2xx 才会改 `verified_at`，且只改这一行。`home.status` 不会自动修改，两项都成功且当前不是 `ok` 时，输出会提示「可考虑改为 ok」，由人决定。改完后照常运行 `./scripts/validate-layout.sh`。
+
+### GitHub Actions
+
+- `.github/workflows/ci.yml`：push 和 PR 时运行 `go vet`、`go test`、`./scripts/validate-layout.sh` 和 `actionlint`。
+- `.github/workflows/weekly.yml`：每周一 02:00 UTC 运行，也可在 Actions 页面手动触发（可填 `provider` 只测一家）。包含三个任务，结果都写进 job summary，不会向仓库提交任何改动：
+  - 外部链接检查：检查仓库里 Markdown 的外部链接，失效只报告，不让任务失败。
+  - 核验过期检查：运行 `stale`，只报告。
+  - 供应商实测：运行 `smoke`；某家实测失败会让该任务变红。
+
+要让某家参与定时实测，在仓库 Settings → Secrets and variables → Actions 里新建同名 Secret，名称与上面的环境变量相同，每家一个：
+
+| 供应商 | Secret 名称 |
+|---|---|
+| agnes | `AGNES_API_KEY` |
+| ai21-labs | `AI21_LABS_API_KEY` |
+| b-ai | `B_AI_API_KEY` |
+| cerebras | `CEREBRAS_API_KEY` |
+| cohere | `COHERE_API_KEY` |
+| google-ai-studio | `GOOGLE_AI_STUDIO_API_KEY` |
+| groq | `GROQ_API_KEY` |
+| iflytek-spark | `IFLYTEK_SPARK_API_KEY` |
+| lg-exaone | `LG_EXAONE_API_KEY` |
+| modelscope | `MODELSCOPE_API_KEY` |
+| nvidia-nim | `NVIDIA_NIM_API_KEY` |
+| openrouter | `OPENROUTER_API_KEY` |
+| sensenova | `SENSENOVA_API_KEY` |
+| siliconflow | `SILICONFLOW_API_KEY` |
+| volcengine-ark | `VOLCENGINE_ARK_API_KEY` |
+| zhipu-glm | `ZHIPU_GLM_API_KEY` |
+
+没配置的 Secret 对应的供应商会被自动跳过。`base_url` 含 `{占位符}` 的供应商（如 `cloudflare-workers-ai`，URL 里有 `{account_id}`）无论有没有 key 都会被跳过，输出里标注「需手动实测」，不需要配 Secret。新增供应商后，除了建 Secret，还要把 `<SLUG>_API_KEY: ${{ secrets.<SLUG>_API_KEY }}` 加到 `weekly.yml` 的 `smoke` 步骤的 `env` 里，Actions 才会把它传给 `smoke`。
+
 ## 必填检查
 
 新增或修改供应商后运行 `./scripts/validate-layout.sh`。

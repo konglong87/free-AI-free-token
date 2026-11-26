@@ -77,6 +77,7 @@ type Model struct {
 	TPM                 int       `yaml:"tpm"`
 	TPD                 int       `yaml:"tpd"`
 	Note                string    `yaml:"note"`
+	Smoke               bool      `yaml:"smoke"` // 实测（catalog smoke）用这个模型发 chat；省略则取第一个上首页的文本模型
 	Home                ModelHome `yaml:"home"`
 }
 
@@ -299,6 +300,7 @@ func Validate(p Provider, caps Capabilities, root string) []string {
 		add("models 至少一个模型")
 	}
 	ids := map[string]bool{}
+	smokeModels := 0
 	for i, m := range p.Models {
 		f := fmt.Sprintf("models[%d]", i)
 		if m.ID == "" {
@@ -316,10 +318,19 @@ func Validate(p Provider, caps Capabilities, root string) []string {
 				add("%s(%s).pending_capabilities 的 %q 不在 capabilities 内", f, m.ID, t)
 			}
 		}
+		if m.Smoke {
+			smokeModels++
+			if !contains(m.Capabilities, textCapability) {
+				add("%s(%s) 的 smoke: true 只能用于「%s」模型", f, m.ID, textCapability)
+			}
+		}
 		if m.RPM < 0 || m.RPD < 0 || m.TPM < 0 || m.TPD < 0 {
 			add("%s(%s) 的 rpm/rpd/tpm/tpd 不能为负数", f, m.ID)
 		}
 		checkPages(f+".home.pages", m.Home.Pages, h.Pages)
+	}
+	if smokeModels > 1 {
+		add("最多一个模型可以设置 smoke: true，当前有 %d 个", smokeModels)
 	}
 	if !tpl {
 		for _, pg := range h.Pages {

@@ -1,0 +1,99 @@
+name: Weekly checks
+
+# 每周一 02:00 UTC 运行，也可手动触发。
+# 三项检查都只报告（写入 job summary），不会向仓库提交任何改动。
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+    inputs:
+      provider:
+        description: 只实测这一家（slug，留空 = 所有配置了 key 的供应商）
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-checks
+  cancel-in-progress: false
+
+jobs:
+  links:
+    name: 外部链接检查
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      # fail: false —— 链接失效只报告（见 job summary），不让任务失败。
+      # 403/429 常见于站点的反爬或限流，不算失效。
+      - name: lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: >-
+            --no-progress --max-concurrency 8 --timeout 20 --max-retries 2
+            --accept '200..=299,403,429'
+            './**/*.md'
+          fail: false
+          jobSummary: true
+
+  stale:
+    name: 核验过期检查
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/catalog
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6.5.0
+        with:
+          go-version-file: tools/catalog/go.mod
+          cache-dependency-path: tools/catalog/go.sum
+      # stale 只报告，过期时退出码也是 0。
+      - name: stale
+        run: go run . stale | tee -a "$GITHUB_STEP_SUMMARY"
+
+  smoke:
+    name: 供应商实测
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: tools/catalog
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6.5.0
+        with:
+          go-version-file: tools/catalog/go.mod
+          cache-dependency-path: tools/catalog/go.sum
+      # 没配置的 Secret 展开为空字符串，该供应商会被跳过。
+      # 新增供应商后，把 <SLUG 大写、- 换成 _>_API_KEY 加到下面这一列。
+      - name: smoke
+        env:
+          PROVIDER: ${{ inputs.provider }}
+          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
+          AI21_LABS_API_KEY: ${{ secrets.AI21_LABS_API_KEY }}
+          B_AI_API_KEY: ${{ secrets.B_AI_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          GOOGLE_AI_STUDIO_API_KEY: ${{ secrets.GOOGLE_AI_STUDIO_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          IFLYTEK_SPARK_API_KEY: ${{ secrets.IFLYTEK_SPARK_API_KEY }}
+          LG_EXAONE_API_KEY: ${{ secrets.LG_EXAONE_API_KEY }}
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+          NVIDIA_NIM_API_KEY: ${{ secrets.NVIDIA_NIM_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SENSENOVA_API_KEY: ${{ secrets.SENSENOVA_API_KEY }}
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          VOLCENGINE_ARK_API_KEY: ${{ secrets.VOLCENGINE_ARK_API_KEY }}
+          ZHIPU_GLM_API_KEY: ${{ secrets.ZHIPU_GLM_API_KEY }}
+        run: |
+          args=()
+          if [ -n "$PROVIDER" ]; then args+=(-provider "$PROVIDER"); fi
+          status=0
+          go run . smoke "${args[@]}" > "$RUNNER_TEMP/smoke.md" || status=$?
+          { echo "## 供应商实测"; echo; cat "$RUNNER_TEMP/smoke.md"; } >> "$GITHUB_STEP_SUMMARY"
+          cat "$RUNNER_TEMP/smoke.md"
+          exit "$status"
